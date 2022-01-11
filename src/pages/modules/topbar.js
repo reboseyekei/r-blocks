@@ -77,7 +77,7 @@ export default function Topbar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" >
+            <AppBar position="static">
                 <Toolbar variant="dense" sx={{ justifyContent: "start" }}>
                     <Typography variant="h5" sx={{ mr: "2%" }}>
                         R-Blocks

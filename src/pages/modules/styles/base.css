@@ -1,0 +1,284 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open sans';
+    --text-primary: #505061;
+    --text-secondary: #767481;
+    --text-extra: #e2e1db;
+    --primary-h: #311a4d;
+    --primary-m: #3f1f69;
+    --primary-l: #5d3c85;
+    --primary-ll: #856cb0;
+    --primary-p: #b7a5d3;
+
+    --secondary-h: #0080A8;
+    --secondary-m: #0099bc;
+    --secondary-l: #00b8d5;
+    --extra-h: #376A35;
+    --extra-m: #458246;
+    --extra-l: #5ba151;
+    --accent-h: #C24B29;
+    --accent-m: #cc5833;
+    --accent-l: #df723d;
+
+    --success-h: #00a152;
+    --success-l: #91ff35;
+    --error-h: #b2102f;
+    --error-l: #ff1744;
+
+    --notice-h: #b2a300;
+    --notice-l: #ffee33;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--success-h);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 4rem;
+    background-color: var(--primary-m);
+    border-bottom: .5rem solid var(--primary-p);
+}
+
+.core {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 4rem);
+}
+
+.side {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+}
+
+.side-list {
+    flex: 3;
+    display: grid;
+    gap: .5rem;
+    height: 100%;
+    width: 30%;
+    grid-template-rows: repeat(6, minmax(1fr, 4rem));
+    background: var(--primary-ll);
+}
+
+.side-area {
+    flex: 7;
+    display: grid;
+    gap: 1rem;
+    height: 100%;
+    width: 70%;
+    grid-template-rows: repeat(6, minmax(1fr, 4rem));
+    background: var(--text-extra);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-l);
+    font-family: "Roboto Mono";
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    transition: all 500ms;
+    cursor: pointer;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+  
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+
+.workspace {
+    height: 100%;
+    width: 100%;
+}
+
+.compiler {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: var(--text-extra);
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+}
+
+.compiler-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.output {
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.code {
+    display: flex;
+    gap: .5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    color: var(--secondary-l);
+    font-size: 2rem;
+    font-family: "Roboto Mono";
+    font-weight: 700;
+    margin: auto;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.base-button {
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 12rem;
+    height: 3rem;
+    color: var(--text-extra);
+    background-color: var(--secondary-h);
+    border-top: 2px solid var(--secondary-m);
+    border-left: 2px solid var(--secondary-m);
+    transition: all 300ms;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+  
+  .base-button:hover {
+    color: var(--secondary-l);
+    border-color: var(--secondary-l) !important;
+  }
+  
+  .base-button:active,
+  .base-button:focus,
+  input {
+    outline: 0;
+    -moz-outline-style: none;
+}
+
+.small-button {
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 6rem;
+    height: 4rem;
+    color: var(--text-extra);
+    background-color: var(--secondary-h);
+    border-top: 2px solid var(--secondary-m);
+    border-left: 2px solid var(--secondary-m);
+    transition: all 300ms;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+  
+  .small-button:hover {
+    color: var(--secondary-l);
+    border-color: var(--secondary-l) !important;
+  }
+  
+  .small-button:active,
+  .small-button:focus,
+  input {
+    outline: 0;
+    -moz-outline-style: none;
+}
+
+.run-button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--success-h);
+    border-top: 2px solid var(--success-l);
+    border-left: 2px solid var(--success-l);
+    transition: all 300ms;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.stop-button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--error-h);
+    border-top: 2px solid var(--error-l);
+    border-left: 2px solid var(--error-l);
+    transition: all 300ms;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.reset-button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--secondary-h);
+    border-top: 2px solid var(--secondary-l);
+    border-left: 2px solid var(--secondary-l);
+    transition: all 300ms;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.icon-button:hover {
+    cursor: pointer;
+    background-color: var(--notice-l);
+    color: var(--primary-h);
+    border-color: var(--notice-l);
+}
+
+.icon-button:active,
+.icon-button:focus,
+input {
+  outline: 0;
+  -moz-outline-style: none;
+}

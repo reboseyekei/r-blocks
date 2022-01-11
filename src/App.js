@@ -12,10 +12,9 @@ import Studio from "./pages/studio"
 
 function App() {
   return (
-    
     <ThemeProvider theme={theme}>
-    <Studio/>;
-  </ThemeProvider>
+      <Studio />;
+    </ThemeProvider>
   )
 }
 
