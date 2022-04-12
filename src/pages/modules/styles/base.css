@@ -56,11 +56,9 @@ body::-webkit-scrollbar-thumb {
     height: calc(100vh - 4rem);
 }
 
-.side {
-    display: flex;
+.blockly {
     height: 100%;
     width: 100%;
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
 }
 
 .side-list {
@@ -71,6 +69,7 @@ body::-webkit-scrollbar-thumb {
     width: 30%;
     grid-template-rows: repeat(6, minmax(1fr, 4rem));
     background: var(--primary-ll);
+    border-right: .1rem solid var(--primary-p);
 }
 
 .side-area {
@@ -99,6 +98,7 @@ body::-webkit-scrollbar-thumb {
     transition: all 500ms;
     cursor: pointer;
     overflow: hidden;
+    border-radius: 60px;
 
     background-size: cover;
     background-position: center;
