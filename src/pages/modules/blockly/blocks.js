@@ -8,7 +8,7 @@ Blockly.Blocks['new_boundary_function'] = {
         this.appendStatementInput("Content")
             .setCheck(null);
         this.setInputsInline(true);
-        this.setColour(315);
+        this.setColour(15);
         this.setTooltip("");
         this.setHelpUrl("");
     }
