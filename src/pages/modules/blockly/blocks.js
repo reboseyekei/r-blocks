@@ -60,3 +60,24 @@ Blockly.JavaScript['library'] = function (block) {
     var code = 'return ' + value_name + '\n';
     return code;
 };
+
+Blockly.Blocks['lib'] = {
+    init: function() {
+      this.appendValueInput("lib_name")
+          .setCheck("String")
+          .setAlign(Blockly.ALIGN_CENTRE)
+          .appendField("library");
+      this.setInputsInline(true);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("Provide the name of library you want to load into the system");
+   this.setHelpUrl("");
+    }
+  };
+
+Blockly.JavaScript['lib'] = function(block) {
+    var value_lib_name = Blockly.JavaScript.valueToCode(block, 'lib_name', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'return ' + value_lib_name + '\n';
+    return code;
+  };

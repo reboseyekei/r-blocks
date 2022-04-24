@@ -61,14 +61,15 @@ export default function Workspace() {
             },
             {
                 kind: "category",
-                name: "Data",
+                name: "Data Wrangling",
                 colour: "#ed8f4c",
-            },
-            {
-                kind: "category",
-                name: "Wrangling",
-                colour: "#edd84c",
-            },
+                contents: [
+                    {
+                        kind: "block",
+                        type: "lib",
+                    },
+                ],
+            }
         ],
     };
 
@@ -79,8 +80,8 @@ export default function Workspace() {
 
 
     const [selected, setSelected] = useState(0);
-    const cards = ["Basic", "Data", "Wrangling", "Plots", "Statistics", "Modeling"];
-    const colors = ["#ed544c", "#ed8f4c", "#edd84c", "#7aed4c", "#824ced", "#ed4cc2"];
+    const cards = ["Basic", "Data Wrangling", "Plots", "Statistics", "Modeling"];
+    const colors = ["#ed544c", "#edd84c", "#7aed4c", "#824ced", "#ed4cc2"];
 
     return (
         <BlocklyWorkspace
