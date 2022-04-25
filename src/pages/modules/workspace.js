@@ -68,6 +68,10 @@ export default function Workspace() {
                         kind: "block",
                         type: "lib",
                     },
+                    {
+                        kind: "block",
+                        type: "req",
+                    },
                 ],
             }
         ],

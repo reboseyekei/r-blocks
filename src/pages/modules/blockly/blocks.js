@@ -73,11 +73,33 @@ Blockly.Blocks['lib'] = {
    this.setTooltip("Provide the name of library you want to load into the system");
    this.setHelpUrl("");
     }
-  };
+};
 
 Blockly.JavaScript['lib'] = function(block) {
     var value_lib_name = Blockly.JavaScript.valueToCode(block, 'lib_name', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = 'return ' + value_lib_name + '\n';
     return code;
+};
+
+Blockly.Blocks['req'] = {
+    init: function() {
+      this.appendValueInput("lib_name")
+          .setCheck("String")
+          .setAlign(Blockly.ALIGN_CENTRE)
+          .appendField("require");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("Provide the name of library you want to load into the system");
+   this.setHelpUrl("");
+    }
   };
+
+Blockly.JavaScript['req'] = function(block) {
+    var value_lib_name = Blockly.JavaScript.valueToCode(block, 'lib_name', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
+};
