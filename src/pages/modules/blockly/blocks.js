@@ -61,6 +61,7 @@ Blockly.JavaScript['library'] = function (block) {
     return code;
 };
 
+/**** Added Library (lib) Function *****/
 Blockly.Blocks['lib'] = {
     init: function() {
       this.appendValueInput("lib_name")
@@ -81,7 +82,9 @@ Blockly.JavaScript['lib'] = function(block) {
     var code = 'return ' + value_lib_name + '\n';
     return code;
 };
+/************ ************************/
 
+/**** Added Library (req) Function *****/
 Blockly.Blocks['req'] = {
     init: function() {
       this.appendValueInput("lib_name")
@@ -103,6 +106,9 @@ Blockly.JavaScript['req'] = function(block) {
     var code = '...;\n';
     return code;
 };
+/***********************************/
+
+/*************** define tallydata ********************/
 
 Blockly.Blocks['tallydata'] = {
     init: function() {
@@ -110,23 +116,26 @@ Blockly.Blocks['tallydata'] = {
           .setCheck(null)
           .setAlign(Blockly.ALIGN_CENTRE)
           .appendField("tally ( ~")
-          .appendField(new Blockly.FieldVariable("substance"), "substance")
+          .appendField(new Blockly.FieldTextInput("substance"), "substance")
           .appendField(", data = ")
-          .appendField(new Blockly.FieldVariable("HELPrct"), "HELPrct");
+          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(")");
       this.setColour(230);
-   //this.setInputsInline(true);
-   this.setPreviousStatement(true, null);
-   this.setNextStatement(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
    this.setTooltip("\"tally(~ substance, data = HELPrct)\" enter your \"substance\" after \"~\", and enter the name of the dataset in the format of \"data = xyz\"");
    this.setHelpUrl("");
     }
 };
 
 Blockly.JavaScript['tallydata'] = function(block) {
-    var variable_substance = Blockly.JavaScript.nameDB_.getName(block.getFieldValue('substance'), Blockly.Variables.NAME_TYPE);
-    var variable_helprct = Blockly.JavaScript.nameDB_.getName(block.getFieldValue('HELPrct'), Blockly.Variables.NAME_TYPE);
+    var text_substance = block.getFieldValue('substance');
+    var text_helprct = block.getFieldValue('HELPrct');
     var value_substance = Blockly.JavaScript.valueToCode(block, 'substance', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '...;\n';
     return code;
-};
+  };
+
+/*************************************************/
+
