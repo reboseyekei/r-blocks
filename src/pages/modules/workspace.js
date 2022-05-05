@@ -80,6 +80,88 @@ export default function Workspace() {
                         kind: "block",
                         type: "tallydataformat",
                     },
+                    {
+                        kind: "block",
+                        type: "tallysexdata",
+                    },
+                    {
+                        kind: "block",
+                        type: "tallysexdata2",
+                    },
+                    {
+                        kind: "block",
+                        type: "tallysexformatdata",
+                    },
+                    {
+                        kind: "block",
+                        type: "favstatsdata",
+                    },
+                    {
+                        kind: "block",
+                        type: "favstatssubstancedata",
+                    },
+                    {
+                        kind: "block",
+                        type: "favstatssubstancedata2",
+                    },
+                    {
+                        kind: "block",
+                        type: "cor",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_bar",
+                    },
+                    {
+                        kind: "block",
+                        type: "pie",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_boxplot",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_boxplot_substance",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_histogram",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_histogram_substance",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_dens",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_dens_color",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_counts",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_percents",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_point",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_qq",
+                    },
+                    {
+                        kind: "block",
+                        type: "mosaicplot",
+                    },
+                    
+
                 ],
             }
         ],
