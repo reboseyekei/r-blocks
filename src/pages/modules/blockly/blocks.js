@@ -70,7 +70,7 @@ Blockly.Blocks['lib'] = {
           .appendField("library");
       this.setInputsInline(true);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour(65);
    this.setTooltip("Provide the name of library you want to load into the system");
    this.setHelpUrl("");
     }
@@ -94,7 +94,7 @@ Blockly.Blocks['req'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour(65);
    this.setTooltip("Provide the name of library you want to load into the system");
    this.setHelpUrl("");
     }
@@ -112,30 +112,59 @@ Blockly.JavaScript['req'] = function(block) {
 
 Blockly.Blocks['tallydata'] = {
     init: function() {
-      this.appendValueInput("substance")
-          .setCheck(null)
-          .setAlign(Blockly.ALIGN_CENTRE)
-          .appendField("tally ( ~")
+      this.appendDummyInput()
+          .appendField("tally(~")
           .appendField(new Blockly.FieldTextInput("substance"), "substance")
-          .appendField(", data = ")
+          .appendField(", data =")
           .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
           .appendField(")");
-      this.setColour(230);
+      this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-   this.setTooltip("\"tally(~ substance, data = HELPrct)\" enter your \"substance\" after \"~\", and enter the name of the dataset in the format of \"data = xyz\"");
+      this.setColour(230);
+   this.setTooltip("");
    this.setHelpUrl("");
     }
-};
+  };
 
 Blockly.JavaScript['tallydata'] = function(block) {
     var text_substance = block.getFieldValue('substance');
     var text_helprct = block.getFieldValue('HELPrct');
-    var value_substance = Blockly.JavaScript.valueToCode(block, 'substance', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '...;\n';
     return code;
   };
 
 /*************************************************/
+
+/********** define tallydataformat ***************/
+Blockly.Blocks['tallydataformat'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("tally(~")
+          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(", data =")
+          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(", format =")
+          .appendField(new Blockly.FieldTextInput("\"proportion\""), "\"proportion\"")
+          .appendField(")");
+      this.setInputsInline(false);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#2ji4j3");
+    }
+  };
+
+  Blockly.JavaScript['tallydataformat'] = function(block) {
+    var text_substance = block.getFieldValue('substance');
+    var text_helprct = block.getFieldValue('HELPrct');
+    var text__proportion_ = block.getFieldValue('"proportion"');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
+  };
+/*************************************************/
+
 

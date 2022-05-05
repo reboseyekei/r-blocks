@@ -76,6 +76,10 @@ export default function Workspace() {
                         kind: "block",
                         type: "tallydata",
                     },
+                    {
+                        kind: "block",
+                        type: "tallydataformat",
+                    },
                 ],
             }
         ],
