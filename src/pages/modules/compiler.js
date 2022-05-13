@@ -25,7 +25,12 @@ export default function Sidebar() {
                 </div>
                 <div className="output" style={{ flex: 20 }}>
                     <div className="code">
-                        <div style={{ flex: 4, background: "#1e1e1e", borderRadius: "2px" }}>
+                        <div style={{ color: "white", flex: 4, background: "#1e1e1e", borderRadius: "2px" }}>
+                            <body> 
+                                <p>
+                                    Code gets updated here!
+                                </p> 
+                            </body>
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
                             <button className="small-button">

@@ -103,7 +103,7 @@ Blockly.Blocks['req'] = {
 Blockly.JavaScript['req'] = function(block) {
     var value_lib_name = Blockly.JavaScript.valueToCode(block, 'lib_name', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code = 'require(' + value_lib_name +')\n';
     return code;
 };
 /***********************************/
