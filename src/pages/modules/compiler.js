@@ -10,6 +10,9 @@ import React from 'react';
 //Style
 import "./styles/base.css";
 
+var codeBody;
+
+
 export default function Sidebar() {
 
     return (
@@ -19,14 +22,41 @@ export default function Sidebar() {
             <div className="compiler-container" style={{ flex: 100 }}>
                 <div style={{ flex: 1 }}>
                 </div>
+                
                 <div className="output" style={{ flex: 40, background: "#fff", boxShadow: "rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem"}}>
                 </div>
+
+                <div class="exercise">
+                    <div class="title">
+                    <h2>How it works</h2>
+                    </div>
+                    <div data-datacamp-exercise data-lang="r" data-height="500">
+                    <code data-type="pre-exercise-code"># no pec</code>
+                    <code data-type="sample-code">
+                        
+                        3 + 4
+                    </code>
+                    
+                    
+                    <div data-type="hint">
+                        <p>Just add a line of R code that calculates the sum of 6 and 12, just like the
+                        example
+                        in the sample code!</p>
+                    </div>
+                    </div>
+                </div>
+
+
+
+
+
+            
                 <div style={{ flex: 1 }}>
                 </div>
                 <div className="output" style={{ flex: 20 }}>
                     <div className="code">
                         <div style={{ color: "white", flex: 4, background: "#1e1e1e", borderRadius: "2px" }}>
-                            <body> 
+                            <body id = "codeBody"> 
                                 <p>
                                     Code gets updated here!
                                 </p> 
@@ -53,3 +83,5 @@ export default function Sidebar() {
         </div>
     )
 }
+
+codeBody = document.getElementById("codeBody");

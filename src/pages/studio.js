@@ -16,6 +16,7 @@ export default function Studio() {
                 <div style={{ flex: 8 }}>
                     <Workspace />
                 </div>
+
                 <div style={{ flex: 4 }}>
                     <Compiler />
                 </div>
