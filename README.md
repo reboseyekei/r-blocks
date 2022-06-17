@@ -1,8 +1,8 @@
 **R-blocks Project**
 
-Advisor: *Professor Shu-Min Liao*
+Advisor: *Professor Shu-Min Liao* and *Dr. Andy Anderson*
 
-Developers: *Mithras Chaudhary '22, Dhyey Mavani '25, Majd Rouhana '22*
+Developers: *Mithras Chaudhary '22 (On Leave), Dhyey Mavani '25*
 
 In collaboration with: 
 - *Amherst College IT Department: https://www.amherst.edu/offices/it*
