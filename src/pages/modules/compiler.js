@@ -59,9 +59,7 @@ export default function Sidebar() {
                             <body id = "codeBody"> 
                                 <font size="+2">
                                 <p>
-                                    # R Code gets updated here! <br></br>
-                                    library(mosaic) <br></br>
-                                    gf_bar(~substance, data = HELPrct) <br></br>
+                                    
                                     
                                 </p>
                                 </font> 
