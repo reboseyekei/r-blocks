@@ -30,39 +30,8 @@ export default function Workspace() {
         contents: [
             {
                 kind: "category",
-                name: "Basic",
-                colour: "#ed544c",
-                contents: [
-                    {
-                        kind: "block",
-                        type: "controls_if",
-                    },
-                    {
-                        kind: "block",
-                        type: "logic_compare",
-                    },
-                    {
-                        kind: "block",
-                        type: "math_round",
-                    },
-                    {
-                        kind: "block",
-                        type: "math_number",
-                    },
-                    {
-                        kind: "block",
-                        type: "new_boundary_function",
-                    },
-                    {
-                        kind: "block",
-                        type: "library",
-                    },
-                ],
-            },
-            {
-                kind: "category",
-                name: "Data Wrangling",
-                colour: "#ed8f4c",
+                name: "Library Functionality",
+                colour: "#df456e",
                 contents: [
                     {
                         kind: "block",
@@ -72,6 +41,13 @@ export default function Workspace() {
                         kind: "block",
                         type: "req",
                     },
+                ],
+            },
+            {
+                kind: "category",
+                name: "Statistical Analysis",
+                colour: "#ed544c",
+                contents: [
                     {
                         kind: "block",
                         type: "tallydata",
@@ -108,6 +84,13 @@ export default function Workspace() {
                         kind: "block",
                         type: "cor",
                     },
+                ],
+            },
+            {
+                kind: "category",
+                name: "Data Visualization",
+                colour: "#ed8f4c",
+                contents: [
                     {
                         kind: "block",
                         type: "gf_bar",
