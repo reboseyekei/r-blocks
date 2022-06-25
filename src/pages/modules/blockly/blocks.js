@@ -1,7 +1,7 @@
 import Blockly from 'blockly';
 import 'blockly/javascript';
 
-/**** Added Library (lib) Function *****/
+/**** Library (lib) Function *****/
 Blockly.Blocks['lib'] = {
   init: function() {
     this.appendDummyInput("library")
@@ -19,14 +19,12 @@ Blockly.Blocks['lib'] = {
 
 Blockly.JavaScript['lib'] = function(block) {
   var dropdown_library_name = block.getFieldValue('library_name');
-  var value_library = Blockly.JavaScript.valueToCode(block, 'library', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = 'library(' + dropdown_library_name + ')\n';
   return code;
 };
 /************ ************************/
 
-/**** Added Library (req) Function *****/
+/**** Library (req) Function *****/
 Blockly.Blocks['req'] = {
     init: function() {
       this.appendDummyInput("library")
@@ -44,9 +42,7 @@ Blockly.Blocks['req'] = {
 
 Blockly.JavaScript['req'] = function(block) {
   var dropdown_library_name = block.getFieldValue('library_name');
-  var value_library = Blockly.JavaScript.valueToCode(block, 'library', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = 'require(' + dropdown_library_name + ')\n';
   return code;
 };
 /***********************************/
