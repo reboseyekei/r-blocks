@@ -129,10 +129,6 @@ export default function Workspace() {
                     },
                     {
                         kind: "block",
-                        type: "gf_percents",
-                    },
-                    {
-                        kind: "block",
                         type: "gf_point",
                     },
                     {
