@@ -4,6 +4,11 @@ import 'blockly/javascript';
 const categorical_vars = [["substance","substance"],["anysub","anysub"], ["sex","sex"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
 const categorical_vars_alt = [["sex","sex"],["substance","substance"],["anysub","anysub"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
 const quantitative_vars = [["cesd","cesd"],["mcs","mcs"], ["pcs","pcs"],["age","age"],["d1","d1"],["pcs_fr","pcs_fr"],["hospitalizations","hospitalizations"],["sexrisk","sexrisk"],["daysanysub","daysanysub"],["dayslink","dayslink"],["drugrisk","drugrisk"],["e2b","e2b"],["i1","i1"],["i2","i2"],["indtotal","indtotal"]]
+const quantitative_vars_alt = [["mcs","mcs"],["cesd","cesd"], ["pcs","pcs"],["age","age"],["d1","d1"],["pcs_fr","pcs_fr"],["hospitalizations","hospitalizations"],["sexrisk","sexrisk"],["daysanysub","daysanysub"],["dayslink","dayslink"],["drugrisk","drugrisk"],["e2b","e2b"],["i1","i1"],["i2","i2"],["indtotal","indtotal"]]
+
+/*************************************************
+ *           LIBRARY FUNCTIONALITY               *
+ ************************************************/
 
 /**** Library (lib) Function *****/
 Blockly.Blocks['lib'] = {
@@ -50,6 +55,10 @@ Blockly.JavaScript['req'] = function(block) {
   return code;
 };
 /***********************************/
+
+/*************************************************
+ *           STATISTICAL ANALYSIS                *
+ ************************************************/
 
 /*************** define tallydata ********************/
 
@@ -250,8 +259,7 @@ Blockly.Blocks['favstatssubstancedata'] = {
     var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
     var dropdown_categorical_var_name = block.getFieldValue('categorical_variable');
     var dropdown_data_name = block.getFieldValue('data');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code = 'favstats(~' + dropdown_quantitative_var_name + '|' + dropdown_categorical_var_name + ', data = ' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
@@ -261,11 +269,11 @@ Blockly.Blocks['favstatssubstancedata2'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("favstats(")
-          .appendField(new Blockly.FieldTextInput("cesd"), "cesd")
+          .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable")
           .appendField("~")
-          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -277,11 +285,10 @@ Blockly.Blocks['favstatssubstancedata2'] = {
   };
 
   Blockly.JavaScript['favstatssubstancedata2'] = function(block) {
-    var text_cesd = block.getFieldValue('cesd');
-    var text_substance = block.getFieldValue('substance');
-    var text_helprct = block.getFieldValue('HELPrct');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
+    var dropdown_categorical_var_name = block.getFieldValue('categorical_variable');
+    var dropdown_data_name = block.getFieldValue('data');
+    var code = 'favstats(' + dropdown_quantitative_var_name + '~' + dropdown_categorical_var_name + ', data = ' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
@@ -291,11 +298,11 @@ Blockly.Blocks['cor'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("cor(")
-          .appendField(new Blockly.FieldTextInput("cesd"), "cesd")
+          .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable_1")
           .appendField("~")
-          .appendField(new Blockly.FieldTextInput("mcs"), "mcs")
+          .appendField(new Blockly.FieldDropdown(quantitative_vars_alt), "quantitative_variable_2")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -307,14 +314,17 @@ Blockly.Blocks['cor'] = {
   };
 
   Blockly.JavaScript['cor'] = function(block) {
-    var text_cesd = block.getFieldValue('cesd');
-    var text_mcs = block.getFieldValue('mcs');
-    var text_helprct = block.getFieldValue('HELPrct');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+    var dropdown_quantitative_var2_name = block.getFieldValue('quantitative_variable_2');
+    var dropdown_data_name = block.getFieldValue('data');
+    var code = 'cor(' + dropdown_quantitative_var1_name + '~' + dropdown_quantitative_var2_name + ', data = ' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
+
+/*************************************************
+ *           DATA VISUALIZATION                  *
+ ************************************************/
 
 /******************* define gf_bar  *********************/
 Blockly.Blocks['gf_bar'] = {
