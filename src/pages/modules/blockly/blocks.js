@@ -17,7 +17,7 @@ Blockly.Blocks['lib'] = {
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
- this.setHelpUrl("");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
 
@@ -40,7 +40,7 @@ Blockly.Blocks['req'] = {
       this.setNextStatement(true, null);
       this.setColour(20);
    this.setTooltip("Checks if the library is loaded already (returns TRUE/FALSE)");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
     }
   };
 
@@ -65,8 +65,8 @@ Blockly.Blocks['tallydata'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
+   this.setTooltip("Used to tally a categorical variable for specific dataset");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
 
@@ -94,8 +94,8 @@ Blockly.Blocks['tallydataformat'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#2ji4j3");
+   this.setTooltip("Used to tally a categorical variable for specific dataset in proportions/percentages format");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
 
@@ -124,7 +124,7 @@ Blockly.Blocks['tallysexdata'] = {
       this.setNextStatement(true, null);
       this.setColour(230);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
 
@@ -153,7 +153,7 @@ Blockly.Blocks['tallysexdata2'] = {
       this.setNextStatement(true, null);
       this.setColour(230);
   this.setTooltip("");
-  this.setHelpUrl("");
+  this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
 
@@ -184,7 +184,7 @@ Blockly.Blocks['tallysexformatdata'] = {
       this.setNextStatement(true, null);
       this.setColour(230);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
 
@@ -213,7 +213,7 @@ Blockly.Blocks['favstatsdata'] = {
       this.setNextStatement(true, null);
       this.setColour(230);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
 
@@ -243,7 +243,7 @@ Blockly.Blocks['favstatssubstancedata'] = {
       this.setNextStatement(true, null);
       this.setColour(230);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
 
@@ -273,7 +273,7 @@ Blockly.Blocks['favstatssubstancedata2'] = {
       this.setNextStatement(true, null);
       this.setColour(230);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
 
@@ -303,7 +303,7 @@ Blockly.Blocks['cor'] = {
       this.setNextStatement(true, null);
       this.setColour(230);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor");
     }
   };
 
@@ -334,7 +334,7 @@ Blockly.Blocks['gf_bar'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
     }
   };
 
@@ -363,7 +363,7 @@ Blockly.Blocks['pie'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/pie");
     }
   };
 
@@ -391,7 +391,7 @@ Blockly.Blocks['gf_boxplot'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_boxplot");
     }
   };
 
@@ -420,7 +420,7 @@ Blockly.Blocks['gf_boxplot_substance'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_boxplot");
     }
   };
 
@@ -451,7 +451,7 @@ Blockly.Blocks['gf_histogram'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_histogram");
     }
   };
 
@@ -484,7 +484,7 @@ Blockly.Blocks['gf_histogram_substance'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_histogram");
     }
   };
 
@@ -514,7 +514,7 @@ Blockly.Blocks['gf_dens'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_density");
     }
   };
 
@@ -545,7 +545,7 @@ Blockly.Blocks['gf_dens_color'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_density");
     }
   };
 
@@ -578,7 +578,7 @@ Blockly.Blocks['gf_counts'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
     }
   };
 
@@ -612,7 +612,7 @@ Blockly.Blocks['gf_percents'] = {
         this.setNextStatement(true, null);
         this.setColour(120);
      this.setTooltip("");
-     this.setHelpUrl("");
+     this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
       }
   };
 
@@ -643,7 +643,7 @@ Blockly.Blocks['gf_point'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_point");
     }
   };
 
@@ -676,7 +676,7 @@ Blockly.Blocks['gf_qq'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_qq");
     }
   };
 
@@ -711,7 +711,7 @@ Blockly.Blocks['mosaicplot'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
    this.setTooltip("");
-   this.setHelpUrl("");
+   this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/mosaicplot");
     }
   };
 
