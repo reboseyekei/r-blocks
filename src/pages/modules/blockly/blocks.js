@@ -204,9 +204,9 @@ Blockly.Blocks['favstatsdata'] = {
       this.appendDummyInput()
           .appendField("favstats(")
           .appendField("~")
-          .appendField(new Blockly.FieldTextInput("cesd"), "cesd")
+          .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -218,10 +218,9 @@ Blockly.Blocks['favstatsdata'] = {
   };
 
   Blockly.JavaScript['favstatsdata'] = function(block) {
-    var text_cesd = block.getFieldValue('cesd');
-    var text_helprct = block.getFieldValue('HELPrct');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
+    var dropdown_data_name = block.getFieldValue('data');
+    var code = 'favstats(~' + dropdown_quantitative_var_name + ', data = ' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
