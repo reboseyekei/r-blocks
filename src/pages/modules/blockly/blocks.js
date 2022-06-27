@@ -1,6 +1,10 @@
 import Blockly from 'blockly';
 import 'blockly/javascript';
 
+const categorical_vars = [["substance","substance"],["anysub","anysub"], ["sex","sex"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
+const categorical_vars_alt = [["sex","sex"],["substance","substance"],["anysub","anysub"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
+const quantitative_vars = [["cesd","cesd"],["mcs","mcs"], ["pcs","pcs"],["age","age"],["d1","d1"],["pcs_fr","pcs_fr"],["hospitalizations","hospitalizations"],["sexrisk","sexrisk"],["daysanysub","daysanysub"],["dayslink","dayslink"],["drugrisk","drugrisk"],["e2b","e2b"],["i1","i1"],["i2","i2"],["indtotal","indtotal"]]
+
 /**** Library (lib) Function *****/
 Blockly.Blocks['lib'] = {
   init: function() {
@@ -12,7 +16,7 @@ Blockly.Blocks['lib'] = {
     this.setPreviousStatement(false, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("");
+ this.setTooltip("This is used to load the library");
  this.setHelpUrl("");
   }
 };
@@ -35,7 +39,7 @@ Blockly.Blocks['req'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(20);
-   this.setTooltip("Provide the name of library you want to load into the system");
+   this.setTooltip("Checks if the library is loaded already (returns TRUE/FALSE)");
    this.setHelpUrl("");
     }
   };
@@ -53,9 +57,9 @@ Blockly.Blocks['tallydata'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("tally(~")
-          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -67,10 +71,9 @@ Blockly.Blocks['tallydata'] = {
   };
 
 Blockly.JavaScript['tallydata'] = function(block) {
-    var text_substance = block.getFieldValue('substance');
-    var text_helprct = block.getFieldValue('HELPrct');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_categorical_var_name = block.getFieldValue('categorical_variable');
+    var dropdown_data_name = block.getFieldValue('data');
+    var code = 'tally(~' + dropdown_categorical_var_name + ', data =' + dropdown_data_name + ')\n';
     return code;
   };
 
@@ -81,11 +84,11 @@ Blockly.Blocks['tallydataformat'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("tally(~")
-          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(", format =")
-          .appendField(new Blockly.FieldTextInput("\"proportion\""), "\"proportion\"")
+          .appendField(new Blockly.FieldDropdown([["\"proportion\"","\"proportion\""],["\"percentage\"","\"percentage\""]]), "format")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -97,11 +100,10 @@ Blockly.Blocks['tallydataformat'] = {
   };
 
   Blockly.JavaScript['tallydataformat'] = function(block) {
-    var text_substance = block.getFieldValue('substance');
-    var text_helprct = block.getFieldValue('HELPrct');
-    var text__proportion_ = block.getFieldValue('"proportion"');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_categorical_var_name = block.getFieldValue('categorical_variable');
+    var dropdown_data_name = block.getFieldValue('data');
+    var dropdown_format_name = block.getFieldValue('format');
+    var code = 'tally(~' + dropdown_categorical_var_name + ', data =' + dropdown_data_name + ', format = ' + dropdown_format_name + ')\n';
     return code;
   };
 /*************************************************/
@@ -111,11 +113,11 @@ Blockly.Blocks['tallysexdata'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("tally(")
-          .appendField(new Blockly.FieldTextInput("sex"), "sex")
+          .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
           .appendField("~")
-          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -127,11 +129,10 @@ Blockly.Blocks['tallysexdata'] = {
   };
 
   Blockly.JavaScript['tallysexdata'] = function(block) {
-    var text_sex = block.getFieldValue('sex');
-    var text_substance = block.getFieldValue('substance');
-    var text_helprct = block.getFieldValue('HELPrct');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+    var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+    var dropdown_data_name = block.getFieldValue('data');
+    var code = 'tally(' + dropdown_categorical_var1_name + '~' + dropdown_categorical_var2_name + ', data =' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
@@ -140,28 +141,27 @@ Blockly.Blocks['tallysexdata'] = {
 Blockly.Blocks['tallysexdata2'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("tally( ~")
-          .appendField(new Blockly.FieldTextInput("sex"), "sex")
+          .appendField("tally(~")
+          .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
           .appendField("+")
-          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
+  this.setTooltip("");
+  this.setHelpUrl("");
     }
   };
 
   Blockly.JavaScript['tallysexdata2'] = function(block) {
-    var text_sex = block.getFieldValue('sex');
-    var text_substance = block.getFieldValue('substance');
-    var text_helprct = block.getFieldValue('HELPrct');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+    var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+    var dropdown_data_name = block.getFieldValue('data');
+    var code = 'tally(~' + dropdown_categorical_var1_name + '+' + dropdown_categorical_var2_name + ', data =' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
@@ -170,14 +170,14 @@ Blockly.Blocks['tallysexdata2'] = {
 Blockly.Blocks['tallysexformatdata'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("tally( ~")
-          .appendField(new Blockly.FieldTextInput("sex"), "sex")
+          .appendField("tally(~")
+          .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
           .appendField("|")
-          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
           .appendField(", format =")
-          .appendField(new Blockly.FieldTextInput("\"proportion\""), "\"proportion\"")
+          .appendField(new Blockly.FieldDropdown([["\"proportion\"","\"proportion\""],["\"percentage\"","\"percentage\""]]), "format")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -189,12 +189,11 @@ Blockly.Blocks['tallysexformatdata'] = {
   };
 
   Blockly.JavaScript['tallysexformatdata'] = function(block) {
-    var text_sex = block.getFieldValue('sex');
-    var text_substance = block.getFieldValue('substance');
-    var text__proportion_ = block.getFieldValue('"proportion"');
-    var text_helprct = block.getFieldValue('HELPrct');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+    var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+    var dropdown_format_name = block.getFieldValue('format');
+    var dropdown_data_name = block.getFieldValue('data');
+    var code = 'tally(~' + dropdown_categorical_var1_name + '|' + dropdown_categorical_var2_name + ', format = ' + dropdown_format_name +', data =' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
