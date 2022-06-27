@@ -231,11 +231,11 @@ Blockly.Blocks['favstatssubstancedata'] = {
       this.appendDummyInput()
           .appendField("favstats(")
           .appendField("~")
-          .appendField(new Blockly.FieldTextInput("cesd"), "cesd")
+          .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable")
           .appendField("|")
-          .appendField(new Blockly.FieldTextInput("substance"), "substance")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable")
           .appendField(", data =")
-          .appendField(new Blockly.FieldTextInput("HELPrct"), "HELPrct")
+          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
@@ -247,9 +247,9 @@ Blockly.Blocks['favstatssubstancedata'] = {
   };
 
   Blockly.JavaScript['favstatssubstancedata'] = function(block) {
-    var text_cesd = block.getFieldValue('cesd');
-    var text_substance = block.getFieldValue('substance');
-    var text_helprct = block.getFieldValue('HELPrct');
+    var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
+    var dropdown_categorical_var_name = block.getFieldValue('categorical_variable');
+    var dropdown_data_name = block.getFieldValue('data');
     // TODO: Assemble JavaScript into code variable.
     var code = '...;\n';
     return code;
