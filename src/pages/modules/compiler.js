@@ -12,7 +12,7 @@ import "./styles/base.css";
 
 
 export default function Sidebar() {
-
+    
     return (
         <div className="compiler">
             <div style={{ flex: 2 }}>
@@ -34,6 +34,7 @@ export default function Sidebar() {
                     <code id="outputCode" data-type="sample-code">
                         
                         3 + 4
+                        
                     </code>
                     
                     

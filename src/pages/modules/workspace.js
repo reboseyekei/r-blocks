@@ -150,7 +150,18 @@ export default function Workspace() {
         const code = Blockly.JavaScript.workspaceToCode(workspace);
         setJavascriptCode(code);
     }
-   
+
+    /*
+    function myUpdateFunction(event) {
+        var code = Blockly.JavaScript.workspaceToCode(workspace);
+        document.getElementById('codeBody').value = code;
+        document.getElementById('outputCode').value = code;
+    }
+    workspace.addChangeListener(myUpdateFunction);
+    */
+
+    // reference: https://developers.google.com/blockly/guides/configure/web/code-generators#realtime_generation
+
     const [selected, setSelected] = useState(0);
     const cards = ["Basic", "Data Wrangling", "Plots", "Statistics", "Modeling"];
     const colors = ["#ed544c", "#edd84c", "#7aed4c", "#824ced", "#ed4cc2"];
