@@ -12,47 +12,7 @@ const quantitative_vars_alt = [["mcs","mcs"],["cesd","cesd"], ["pcs","pcs"],["ag
 /* Link for Generating Code: https://developers.google.com/blockly/guides/create-custom-blocks/generating-code */
 Blockly.RBlocks = new Blockly.Generator('RBlocks');
 
- /**
-  * Generate code as stringified JSON. (This has to be a string because Blockly's
-  * code generator insists on strings.)
-  * @param workspace The Blockly workspace containing the program.
-  * @return Stringified JSON representation of the workspace.
-  */
- /*
- Blockly.RBlocks.workspaceToCode = (workspace) => {
-   const allTopBlocks = workspace.getTopBlocks()
-   const cappedBlocks = allTopBlocks.filter(block => (block.hat === 'cap'))
-   const strayCount = allTopBlocks.length - cappedBlocks.length
-   const pipelines = cappedBlocks.map(top => _makePipeline(top))
-   pipelines.unshift('"@program"')
-   const code = `[${pipelines}]`
-   return {
-     code,
-     strayCount
-   }
- }
- */
-
- /**
-  * Helper function to generate code given the top block of a stack.
-  * @param top Top block of stack.
-  * @return Stringified JSON representation of stack.
-  */
- /*
- const _makePipeline = (top) => {
-   const blocks = []
-   let current = top
-   while (current && (current instanceof Blockly.Block)) {
-     blocks.push(current)
-     current = current.getNextBlock()
-   }
-   const transforms =
-     blocks.map(block => Blockly.TidyBlocks.blockToCode(block, true))
-   transforms.unshift('"@pipeline"')
-   return `[${transforms}]`
- }
- */
-/******************************/
+ 
 
 
 
