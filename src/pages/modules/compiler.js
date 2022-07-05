@@ -21,9 +21,7 @@ export default function Sidebar() {
                 <div style={{ flex: 1 }}>
                 </div>
                 
-                <div className="output" style={{ flex: 40, background: "#fff", boxShadow: "rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem"}}>
-                    
-                </div>
+                
 
                 <div class="exercise">
                     <div class="title">
@@ -32,12 +30,14 @@ export default function Sidebar() {
                     <div data-datacamp-exercise data-lang="r" data-height="500">
                     <code data-type="pre-exercise-code"># no pec</code>
                     <code id="outputCode" data-type="sample-code">
-                        
-                        3+4
-                        
-                    </code>
-                    
-                    
+                        <body id = "datacamp"> 
+                            <font size="+2">
+                            <p>
+                                
+                            </p>
+                            </font> 
+                        </body>
+                </code>
                     <div data-type="hint">
                         <p>Just add a line of R code that calculates the sum of 6 and 12, just like the
                         example
@@ -111,5 +111,12 @@ export default function Sidebar() {
         in the sample code!</p>
     </div>
     </div>
+</div>
+*/
+
+/*
+// White Box at the top (before the exercise block)
+<div className="output" style={{ flex: 40, background: "#fff", boxShadow: "rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem"}}>
+                    
 </div>
 */
