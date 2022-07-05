@@ -1,6 +1,8 @@
 import Blockly from 'blockly';
 import 'blockly/javascript';
 
+const BlocklyR = require('./blockly_compressed')
+
 const categorical_vars = [["substance","substance"],["anysub","anysub"], ["sex","sex"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
 const categorical_vars_alt = [["sex","sex"],["substance","substance"],["anysub","anysub"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
 const quantitative_vars = [["cesd","cesd"],["mcs","mcs"], ["pcs","pcs"],["age","age"],["d1","d1"],["pcs_fr","pcs_fr"],["hospitalizations","hospitalizations"],["sexrisk","sexrisk"],["daysanysub","daysanysub"],["dayslink","dayslink"],["drugrisk","drugrisk"],["e2b","e2b"],["i1","i1"],["i2","i2"],["indtotal","indtotal"]]
@@ -8,6 +10,54 @@ const quantitative_vars_alt = [["mcs","mcs"],["cesd","cesd"], ["pcs","pcs"],["ag
 
 
 /* Link for Generating Code: https://developers.google.com/blockly/guides/create-custom-blocks/generating-code */
+Blockly.RBlocks = new Blockly.Generator('RBlocks');
+
+ /**
+  * Generate code as stringified JSON. (This has to be a string because Blockly's
+  * code generator insists on strings.)
+  * @param workspace The Blockly workspace containing the program.
+  * @return Stringified JSON representation of the workspace.
+  */
+ /*
+ Blockly.RBlocks.workspaceToCode = (workspace) => {
+   const allTopBlocks = workspace.getTopBlocks()
+   const cappedBlocks = allTopBlocks.filter(block => (block.hat === 'cap'))
+   const strayCount = allTopBlocks.length - cappedBlocks.length
+   const pipelines = cappedBlocks.map(top => _makePipeline(top))
+   pipelines.unshift('"@program"')
+   const code = `[${pipelines}]`
+   return {
+     code,
+     strayCount
+   }
+ }
+ */
+
+ /**
+  * Helper function to generate code given the top block of a stack.
+  * @param top Top block of stack.
+  * @return Stringified JSON representation of stack.
+  */
+ /*
+ const _makePipeline = (top) => {
+   const blocks = []
+   let current = top
+   while (current && (current instanceof Blockly.Block)) {
+     blocks.push(current)
+     current = current.getNextBlock()
+   }
+   const transforms =
+     blocks.map(block => Blockly.TidyBlocks.blockToCode(block, true))
+   transforms.unshift('"@pipeline"')
+   return `[${transforms}]`
+ }
+ */
+/******************************/
+
+
+
+
+
 
 /*************************************************
  *           LIBRARY FUNCTIONALITY               *

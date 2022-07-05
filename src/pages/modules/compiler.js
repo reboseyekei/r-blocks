@@ -33,7 +33,7 @@ export default function Sidebar() {
                     <code data-type="pre-exercise-code"># no pec</code>
                     <code id="outputCode" data-type="sample-code">
                         
-                        3 + 4
+                        3+4
                         
                     </code>
                     
