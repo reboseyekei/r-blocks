@@ -13,7 +13,7 @@ const quantitative_vars_alt = [["mcs","mcs"],["cesd","cesd"], ["pcs","pcs"],["ag
 Blockly.RBlocks = new Blockly.Generator('RBlocks');
 
  
-
+/* change statistical analysis to numerical summaries */
 
 
 
@@ -45,7 +45,7 @@ Blockly.JavaScript['lib'] = function(block) {
   return code;
 };
 /************ ************************/
-
+/* remove this one */
 /**** Library (req) Function *****/
 Blockly.Blocks['req'] = {
     init: function() {
@@ -87,7 +87,7 @@ Blockly.Blocks['tallydata'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("Used to tally a categorical variable for specific dataset");
+   this.setTooltip("Choose a categorical variable and a dataset to get a contingence table");
    this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
@@ -100,7 +100,7 @@ Blockly.JavaScript['tallydata'] = function(block) {
   };
 
 /*************************************************/
-
+/* "count", "proportion", "percent" */
 /********** define tallydataformat ***************/
 Blockly.Blocks['tallydataformat'] = {
     init: function() {
@@ -116,7 +116,7 @@ Blockly.Blocks['tallydataformat'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("Used to tally a categorical variable for specific dataset in proportions/percentages format");
+   this.setTooltip("Choose a categorical variable, a dataset and a format  to get a contingence table");
    this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
@@ -145,7 +145,7 @@ Blockly.Blocks['tallysexdata'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
+   this.setTooltip("Select two categorical variables and a dataset to make a two-way table");
    this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
@@ -160,6 +160,7 @@ Blockly.Blocks['tallysexdata'] = {
 /*******************************************************/
 
 /************* tallysexdata2 ****************************/
+/* comment it out also from the infrastructure side */
 Blockly.Blocks['tallysexdata2'] = {
     init: function() {
       this.appendDummyInput()
@@ -187,7 +188,7 @@ Blockly.Blocks['tallysexdata2'] = {
     return code;
   };
 /*******************************************************/
-
+/* flip sex and substance */
 /************* tallysexformatdata ****************************/
 Blockly.Blocks['tallysexformatdata'] = {
     init: function() {
@@ -205,7 +206,7 @@ Blockly.Blocks['tallysexformatdata'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
+   this.setTooltip("Select two categorical variables, a format and a dataset to make a conditional two-way table");
    this.setHelpUrl("https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/tally");
     }
   };
@@ -234,7 +235,7 @@ Blockly.Blocks['favstatsdata'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
+   this.setTooltip("Choose a quantitative variable and a dataset to get the numerical summary");
    this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
@@ -263,7 +264,7 @@ Blockly.Blocks['favstatssubstancedata'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
+   this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group");
    this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
@@ -292,7 +293,7 @@ Blockly.Blocks['favstatssubstancedata2'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
+   this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group");
    this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
@@ -321,7 +322,7 @@ Blockly.Blocks['cor'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("");
+   this.setTooltip("Choose two quantitative variables and a dataset to get the correlation between these two variables");
    this.setHelpUrl("https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor");
     }
   };

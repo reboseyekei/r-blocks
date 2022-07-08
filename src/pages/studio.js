@@ -6,6 +6,7 @@ import Toolbar from "./modules/toolbar"
 import Workspace from "./modules/workspace"
 import Compiler from "./modules/compiler"
 
+
 //Contexts
 
 export default function Studio() {
@@ -19,8 +20,14 @@ export default function Studio() {
 
                 <div style={{ flex: 4 }}>
                     <Compiler />
+                    
                 </div>
+
+                
             </div>
         </div>
     )
 }
+
+
+

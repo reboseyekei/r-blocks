@@ -11,6 +11,7 @@ import React from 'react';
 import "./styles/base.css";
 
 
+
 export default function Sidebar() {
     
     return (
@@ -23,30 +24,13 @@ export default function Sidebar() {
                 
                 
 
-                <div class="exercise">
-                    <div class="title">
-                    <h2>How it works</h2>
-                    </div>
-                    <div data-datacamp-exercise data-lang="r" data-height="500">
-                    <code data-type="pre-exercise-code"># no pec</code>
-                    <code id="outputCode" data-type="sample-code">
-                        <body id = "datacamp"> 
-                            <font size="+2">
-                            <p>
-                                3 + 4
-                            </p>
-                            </font> 
-                        </body>
-                </code>
-                    <div data-type="hint">
-                        <p>Just add a line of R code that calculates the sum of 6 and 12, just like the
-                        example
-                        in the sample code!</p>
-                    </div>
-                    </div>
-                </div>
                 
-
+                
+                <div>
+                    <iframe width='100%' height='800' src='https://rdrr.io/snippets/embed/?code=print(%22Hello%2C%20world!%22)' frameborder='0'>
+                        Documentation Support: https://rdrr.io/snippets/embedding/
+                    </iframe>
+                </div>
 
 
 
@@ -70,12 +54,13 @@ export default function Sidebar() {
                             <button className="small-button">
                                 Show R code
                             </button>
-                            <button className="small-button">
+                            <button id = "copyButton" className="small-button" onclick = "copyCode()">
                                 Copy
                             </button>
                             <button className="small-button">
                                 Live Coding
                             </button>
+                            
                         </div>
                     </div>
                 </div>
@@ -84,9 +69,12 @@ export default function Sidebar() {
             </div>
             <div style={{ flex: 1 }}>
             </div>
+            
         </div>
+        
     )
 }
+
 
 
 /*

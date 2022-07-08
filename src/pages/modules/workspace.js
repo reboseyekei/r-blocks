@@ -150,7 +150,7 @@ export default function Workspace() {
         const code = Blockly.JavaScript.workspaceToCode(workspace);
         setJavascriptCode(code);
         document.getElementById('codeBody').innerText = code;
-        //document.getElementById('datacamp').innerText = code;
+        
     }
 
     /*
