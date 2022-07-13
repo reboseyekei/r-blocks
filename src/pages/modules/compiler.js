@@ -13,8 +13,8 @@ import "./styles/base.css";
 
 
 export default function Sidebar() {
-    var text_code = 'librar(mosaic)'
-    var link = 'https://rdrr.io/snippets/embed/?code=' + encodeURI(text_code)
+    //const text_code = document.getElementById('codeBody').value;
+    //const link = 'https://rdrr.io/snippets/embed/?code=' + encodeURI(text_code)
     return (
         <div className="compiler">
             <div style={{ flex: 2 }}>
@@ -28,18 +28,22 @@ export default function Sidebar() {
                 
                 
                 <div>
-                    <script>
-                        var text_code = 'librar(mosaic)';
-                        var links = 'https://rdrr.io/snippets/embed/?code=' + encodeURI(text_code);
-                    </script>
-                    <iframe width='100%' height='300' src= '${links}' frameborder='0'>
-                        Documentation Support: https://rdrr.io/snippets/embedding/
-                    </iframe>
-
-                    <iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=library%28mosaic%29' frameborder='0'>
+                    
+                    <iframe id="dm" width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=library(mosaic)' frameborder='0'>
                         Documentation Support: https://rdrr.io/snippets/embedding/
                     </iframe>
                     
+                    
+                </div>
+
+                <div style={{ color: "white", flex: 100, background: "#1e1e1e", borderRadius: "2px" }}>
+                    <body id = "URIBody"> 
+                        <font size="+2">
+                        <p>
+                            
+                        </p>
+                        </font> 
+                    </body>
                 </div>
 
                 

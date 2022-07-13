@@ -150,7 +150,9 @@ export default function Workspace() {
         const code = Blockly.JavaScript.workspaceToCode(workspace);
         setJavascriptCode(code);
         document.getElementById('codeBody').innerText = code;
-        
+        const linked = 'https://rdrr.io/snippets/embed/?code=' + encodeURI(code)
+        document.getElementById('URIBody').innerText = linked;
+        document.getElementById('dm').src = linked;
     }
 
     /*
