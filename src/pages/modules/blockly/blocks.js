@@ -15,6 +15,8 @@ Blockly.RBlocks = new Blockly.Generator('RBlocks');
  
 /* change statistical analysis to numerical summaries */
 
+/* gf bar delete fill */
+/* add gf_percents(~substance, data = HELPrct, fill = ~sex, position= "fill") also position doges as option */
 
 
 

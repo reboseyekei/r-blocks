@@ -27,10 +27,13 @@ export default function Sidebar() {
                 
                 
                 <div>
-                    <iframe width='100%' height='800' src='https://rdrr.io/snippets/embed/?code=print(%22Hello%2C%20world!%22)' frameborder='0'>
+                    <iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=print(%22Hello%2C%20world!%22)' frameborder='0'>
                         Documentation Support: https://rdrr.io/snippets/embedding/
                     </iframe>
+                    
                 </div>
+
+                
 
 
 
