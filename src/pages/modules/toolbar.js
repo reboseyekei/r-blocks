@@ -23,6 +23,7 @@ export default function Toolbar() {
                 <h1 className="header">RBlocks</h1>
             </ul>
             <div style={{ width: "100%", flex: 6 }}>
+                {/*
                 <button className="base-button">
                     packages
                 </button>
@@ -32,8 +33,10 @@ export default function Toolbar() {
                 <button className="base-button">
                     tutorials
                 </button>
+                 */}
             </div>
             <div style={{ width: "100%", flex: 1 }}>
+                {/*
                 <button className="icon-button run-button">
                     <PlayArrowIcon fontSize="large" sx={{ml: "-2px", mb: "-1px"}}/>
                 </button>
@@ -43,6 +46,7 @@ export default function Toolbar() {
                 <button className="icon-button reset-button">
                     <FiberNewIcon fontSize="large" sx={{ml: "-2px", mb: "-1px"}}/>
                 </button>
+                 */}
             </div>
         </nav>
     )
