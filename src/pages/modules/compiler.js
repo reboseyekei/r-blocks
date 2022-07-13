@@ -13,7 +13,8 @@ import "./styles/base.css";
 
 
 export default function Sidebar() {
-    
+    var text_code = 'librar(mosaic)'
+    var link = 'https://rdrr.io/snippets/embed/?code=' + encodeURI(text_code)
     return (
         <div className="compiler">
             <div style={{ flex: 2 }}>
@@ -27,7 +28,15 @@ export default function Sidebar() {
                 
                 
                 <div>
-                    <iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=print(%22Hello%2C%20world!%22)' frameborder='0'>
+                    <script>
+                        var text_code = 'librar(mosaic)';
+                        var links = 'https://rdrr.io/snippets/embed/?code=' + encodeURI(text_code);
+                    </script>
+                    <iframe width='100%' height='300' src= '${links}' frameborder='0'>
+                        Documentation Support: https://rdrr.io/snippets/embedding/
+                    </iframe>
+
+                    <iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=library%28mosaic%29' frameborder='0'>
                         Documentation Support: https://rdrr.io/snippets/embedding/
                     </iframe>
                     
@@ -47,23 +56,24 @@ export default function Sidebar() {
                             <body id = "codeBody"> 
                                 <font size="+2">
                                 <p>
-                                    
-                                    
+                                 
                                 </p>
                                 </font> 
                             </body>
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
-                            <button className="small-button">
-                                Show R code
-                            </button>
+                            
                             <button id = "copyButton" className="small-button" onclick = "copyCode()">
                                 Copy
+                            </button>
+                            {/*
+                            <button className="small-button">
+                                Show R code
                             </button>
                             <button className="small-button">
                                 Live Coding
                             </button>
-                            
+                             */}
                         </div>
                     </div>
                 </div>
