@@ -29,13 +29,14 @@ export default function Sidebar() {
                 
                 <div>
                     
-                    <iframe id="dm" width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=library(mosaic)' frameborder='0'>
+                    <iframe id="snippet" width='100%' height='800' src='https://rdrr.io/snippets/embed/?code=library(mosaic)' frameborder='0'>
                         Documentation Support: https://rdrr.io/snippets/embedding/
                     </iframe>
                     
                     
                 </div>
-
+                
+                {/*
                 <div style={{ color: "white", flex: 100, background: "#1e1e1e", borderRadius: "2px" }}>
                     <body id = "URIBody"> 
                         <font size="+2">
@@ -45,15 +46,17 @@ export default function Sidebar() {
                         </font> 
                     </body>
                 </div>
+                */}
 
                 
 
 
 
 
-            
+                
                 <div style={{ flex: 1 }}>
                 </div>
+                {/*
                 <div className="output" style={{ flex: 20 }}>
                     <div className="code">
                         <div style={{ color: "white", flex: 100, background: "#1e1e1e", borderRadius: "2px" }}>
@@ -70,19 +73,14 @@ export default function Sidebar() {
                             <button id = "copyButton" className="small-button" onclick = "copyCode()">
                                 Copy
                             </button>
-                            {/*
-                            <button className="small-button">
-                                Show R code
-                            </button>
-                            <button className="small-button">
-                                Live Coding
-                            </button>
-                             */}
                         </div>
                     </div>
                 </div>
+
                 <div style={{ flex: 1 }}>
                 </div>
+                */}
+            
             </div>
             <div style={{ flex: 1 }}>
             </div>

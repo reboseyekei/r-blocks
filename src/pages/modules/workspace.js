@@ -45,7 +45,7 @@ export default function Workspace() {
             },
             {
                 kind: "category",
-                name: "Statistical Analysis",
+                name: "Numerical Summaries",
                 colour: "#ed544c",
                 contents: [
                     {
@@ -148,11 +148,11 @@ export default function Workspace() {
 
     function workspaceDidChange(workspace) {
         const code = Blockly.JavaScript.workspaceToCode(workspace);
-        setJavascriptCode(code);
-        document.getElementById('codeBody').innerText = code;
+        //setJavascriptCode(code);
+        //document.getElementById('codeBody').innerText = code;
         const linked = 'https://rdrr.io/snippets/embed/?code=' + encodeURI(code)
-        document.getElementById('URIBody').innerText = linked;
-        document.getElementById('dm').src = linked;
+        //document.getElementById('URIBody').innerText = linked;
+        document.getElementById('snippet').src = linked;
     }
 
     /*
@@ -166,10 +166,8 @@ export default function Workspace() {
 
     // reference: https://developers.google.com/blockly/guides/configure/web/code-generators#realtime_generation
 
-    const [selected, setSelected] = useState(0);
-    const cards = ["Basic", "Data Wrangling", "Plots", "Statistics", "Modeling"];
-    const colors = ["#ed544c", "#edd84c", "#7aed4c", "#824ced", "#ed4cc2"];
-    // try adding js
+    
+    
     return (
         <BlocklyWorkspace
             className="blockly"

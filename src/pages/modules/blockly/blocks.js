@@ -12,8 +12,6 @@ const quantitative_vars_alt = [["mcs","mcs"],["cesd","cesd"], ["pcs","pcs"],["ag
 /* Link for Generating Code: https://developers.google.com/blockly/guides/create-custom-blocks/generating-code */
 Blockly.RBlocks = new Blockly.Generator('RBlocks');
 
- 
-/* change statistical analysis to numerical summaries */
 
 /* gf bar delete fill */
 /* add gf_percents(~substance, data = HELPrct, fill = ~sex, position= "fill") also position doges as option */
