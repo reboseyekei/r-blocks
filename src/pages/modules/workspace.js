@@ -37,6 +37,26 @@ export default function Workspace() {
                         kind: "block",
                         type: "lib",
                     },
+                    {
+                        kind: "block",
+                        type: "names",
+                    },
+                    {
+                        kind: "block",
+                        type: "glimpse",
+                    },
+                    {
+                        kind: "block",
+                        type: "head",
+                    },
+                    {
+                        kind: "block",
+                        type: "tail",
+                    },
+                    {
+                        kind: "block",
+                        type: "help",
+                    },
                 ],
             },
             {
@@ -46,7 +66,27 @@ export default function Workspace() {
                 contents: [
                     {
                         kind: "block",
-                        type: "lib2",
+                        type: "Glib",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gnames",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gglimpse",
+                    },
+                    {
+                        kind: "block",
+                        type: "Ghead",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gtail",
+                    },
+                    {
+                        kind: "block",
+                        type: "Ghelp",
                     },
                 ],
             },
@@ -100,39 +140,39 @@ export default function Workspace() {
                 contents: [
                     {
                         kind: "block",
-                        type: "tallydata",
+                        type: "Gtallydata",
                     },
                     {
                         kind: "block",
-                        type: "tallydataformat",
+                        type: "Gtallydataformat",
                     },
                     {
                         kind: "block",
-                        type: "tallysexdata",
+                        type: "Gtallysexdata",
                     },
                     {
                         kind: "block",
-                        type: "tallysexdata2",
+                        type: "Gtallysexdata2",
                     },
                     {
                         kind: "block",
-                        type: "tallysexformatdata",
+                        type: "Gtallysexformatdata",
                     },
                     {
                         kind: "block",
-                        type: "favstatsdata",
+                        type: "Gfavstatsdata",
                     },
                     {
                         kind: "block",
-                        type: "favstatssubstancedata",
+                        type: "Gfavstatssubstancedata",
                     },
                     {
                         kind: "block",
-                        type: "favstatssubstancedata2",
+                        type: "Gfavstatssubstancedata2",
                     },
                     {
                         kind: "block",
-                        type: "cor",
+                        type: "Gcor",
                     },
                 ],
             },
@@ -200,51 +240,51 @@ export default function Workspace() {
                 contents: [
                     {
                         kind: "block",
-                        type: "gf_bar",
+                        type: "Ggf_bar",
                     },
                     {
                         kind: "block",
-                        type: "pie",
+                        type: "Gpie",
                     },
                     {
                         kind: "block",
-                        type: "gf_boxplot",
+                        type: "Ggf_boxplot",
                     },
                     {
                         kind: "block",
-                        type: "gf_boxplot_substance",
+                        type: "Ggf_boxplot_substance",
                     },
                     {
                         kind: "block",
-                        type: "gf_histogram",
+                        type: "Ggf_histogram",
                     },
                     {
                         kind: "block",
-                        type: "gf_histogram_substance",
+                        type: "Ggf_histogram_substance",
                     },
                     {
                         kind: "block",
-                        type: "gf_dens",
+                        type: "Ggf_dens",
                     },
                     {
                         kind: "block",
-                        type: "gf_dens_color",
+                        type: "Ggf_dens_color",
                     },
                     {
                         kind: "block",
-                        type: "gf_counts",
+                        type: "Ggf_counts",
                     },
                     {
                         kind: "block",
-                        type: "gf_point",
+                        type: "Ggf_point",
                     },
                     {
                         kind: "block",
-                        type: "gf_qq",
+                        type: "Ggf_qq",
                     },
                     {
                         kind: "block",
-                        type: "mosaicplot",
+                        type: "Gmosaicplot",
                     },
                     
 
