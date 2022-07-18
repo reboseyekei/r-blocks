@@ -30,23 +30,73 @@ export default function Workspace() {
         contents: [
             {
                 kind: "category",
-                name: "Library Functionality",
-                colour: "#df456e",
+                name: "General Functionality (using HELPrct)",
+                colour: "20",
                 contents: [
                     {
                         kind: "block",
                         type: "lib",
                     },
+                ],
+            },
+            {
+                kind: "category",
+                name: "General Functionality",
+                colour: "20",
+                contents: [
                     {
                         kind: "block",
-                        type: "req",
+                        type: "lib2",
                     },
                 ],
             },
             {
                 kind: "category",
                 name: "Numerical Summaries (using HELPrct)",
-                colour: "#ed544c",
+                colour: "230",
+                contents: [
+                    {
+                        kind: "block",
+                        type: "tallydata",
+                    },
+                    {
+                        kind: "block",
+                        type: "tallydataformat",
+                    },
+                    {
+                        kind: "block",
+                        type: "tallysexdata",
+                    },
+                    {
+                        kind: "block",
+                        type: "tallysexdata2",
+                    },
+                    {
+                        kind: "block",
+                        type: "tallysexformatdata",
+                    },
+                    {
+                        kind: "block",
+                        type: "favstatsdata",
+                    },
+                    {
+                        kind: "block",
+                        type: "favstatssubstancedata",
+                    },
+                    {
+                        kind: "block",
+                        type: "favstatssubstancedata2",
+                    },
+                    {
+                        kind: "block",
+                        type: "cor",
+                    },
+                ],
+            },
+            {
+                kind: "category",
+                name: "Numerical Summaries",
+                colour: "230",
                 contents: [
                     {
                         kind: "block",
@@ -89,7 +139,64 @@ export default function Workspace() {
             {
                 kind: "category",
                 name: "Data Visualization (using HELPrct)",
-                colour: "#ed8f4c",
+                colour: "120",
+                contents: [
+                    {
+                        kind: "block",
+                        type: "gf_bar",
+                    },
+                    {
+                        kind: "block",
+                        type: "pie",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_boxplot",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_boxplot_substance",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_histogram",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_histogram_substance",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_dens",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_dens_color",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_counts",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_point",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_qq",
+                    },
+                    {
+                        kind: "block",
+                        type: "mosaicplot",
+                    },
+                    
+
+                ],
+            },
+            {
+                kind: "category",
+                name: "Data Visualization",
+                colour: "120",
                 contents: [
                     {
                         kind: "block",

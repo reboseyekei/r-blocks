@@ -20,7 +20,7 @@ Blockly.RBlocks = new Blockly.Generator('RBlocks');
 
 
 /*************************************************
- *           LIBRARY FUNCTIONALITY               *
+ *     GENERAL FUNCTIONALITY (using HELPrct)     *
  ************************************************/
 
 /**** Library (lib) Function *****/
@@ -28,7 +28,7 @@ Blockly.Blocks['lib'] = {
   init: function() {
     this.appendDummyInput("library")
         .appendField("library(")
-        .appendField(new Blockly.FieldDropdown([["mosaic","mosaic"]/*, ["option","OPTIONNAME"], ["option","OPTIONNAME"]*/]), "library_name")
+        .appendField(new Blockly.FieldDropdown([["mosaic","mosaic"], ["mosaicData","mosaicData"], ["Stat2Data","Stat2Data"]]), "library_name")
         .appendField(")");
     this.setInputsInline(false);
     this.setPreviousStatement(false, null);
@@ -45,32 +45,36 @@ Blockly.JavaScript['lib'] = function(block) {
   return code;
 };
 /************ ************************/
-/* remove this one */
-/**** Library (req) Function *****/
-Blockly.Blocks['req'] = {
-    init: function() {
-      this.appendDummyInput("library")
-          .appendField("require(")
-          .appendField(new Blockly.FieldDropdown([["mosaic","mosaic"]/*, ["option","OPTIONNAME"], ["option","OPTIONNAME"]*/]), "library_name")
-          .appendField(")");
-      this.setInputsInline(false);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(20);
-   this.setTooltip("Checks if the library is loaded already (returns TRUE/FALSE)");
-   this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
-    }
-  };
-
-Blockly.JavaScript['req'] = function(block) {
-  var dropdown_library_name = block.getFieldValue('library_name');
-  var code = 'require(' + dropdown_library_name + ')\n';
-  return code;
-};
-/***********************************/
 
 /*************************************************
- *           STATISTICAL ANALYSIS                *
+ *           GENERAL FUNCTIONALITY               *
+ ************************************************/
+
+/**** Library (lib2) Function *****/
+Blockly.Blocks['lib2'] = {
+  init: function() {
+    this.appendDummyInput("library")
+        .appendField("library(")
+        .appendField(new Blockly.FieldDropdown([["mosaic","mosaic"], ["mosaicData","mosaicData"], ["Stat2Data","Stat2Data"]]), "library_name")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(false, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+ this.setTooltip("This is used to load the library");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
+  }
+};
+
+Blockly.JavaScript['lib2'] = function(block) {
+  var dropdown_library_name = block.getFieldValue('library_name');
+  var code = 'library(' + dropdown_library_name + ')\n';
+  return code;
+};
+/************ ************************/
+
+/*************************************************
+ *    STATISTICAL ANALYSIS (using HELPrct)       *
  ************************************************/
 
 /*************** define tallydata ********************/
@@ -337,7 +341,7 @@ Blockly.Blocks['cor'] = {
 /*******************************************************/
 
 /*************************************************
- *           DATA VISUALIZATION                  *
+ *    DATA VISUALIZATION (using HELPrct)         *
  ************************************************/
 
 /******************* define gf_bar  *********************/
