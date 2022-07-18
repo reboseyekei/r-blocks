@@ -45,7 +45,7 @@ export default function Workspace() {
             },
             {
                 kind: "category",
-                name: "Numerical Summaries",
+                name: "Numerical Summaries (using HELPrct)",
                 colour: "#ed544c",
                 contents: [
                     {
@@ -88,7 +88,7 @@ export default function Workspace() {
             },
             {
                 kind: "category",
-                name: "Data Visualization",
+                name: "Data Visualization (using HELPrct)",
                 colour: "#ed8f4c",
                 contents: [
                     {
