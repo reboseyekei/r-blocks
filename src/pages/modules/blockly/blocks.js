@@ -51,10 +51,10 @@ Blockly.Blocks['names'] = {
   init: function() {
     this.appendDummyInput("names")
         .appendField("names(")
-        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"],["mosaicData","mosaicData"],["Stat2Data","Stat2Data"]]), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -74,10 +74,10 @@ Blockly.Blocks['glimpse'] = {
   init: function() {
     this.appendDummyInput("glimpse")
         .appendField("glimpse(")
-        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"],["mosaicData","mosaicData"],["Stat2Data","Stat2Data"]]), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -97,10 +97,10 @@ Blockly.Blocks['head'] = {
   init: function() {
     this.appendDummyInput("head")
         .appendField("head(")
-        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"],["mosaicData","mosaicData"],["Stat2Data","Stat2Data"]]), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -120,10 +120,10 @@ Blockly.Blocks['tail'] = {
   init: function() {
     this.appendDummyInput("tail")
         .appendField("tail(")
-        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"],["mosaicData","mosaicData"],["Stat2Data","Stat2Data"]]), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -143,10 +143,10 @@ Blockly.Blocks['help'] = {
   init: function() {
     this.appendDummyInput("help")
         .appendField("help(")
-        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"],["mosaicData","mosaicData"],["Stat2Data","Stat2Data"]]), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -196,7 +196,7 @@ Blockly.Blocks['Gnames'] = {
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -219,7 +219,7 @@ Blockly.Blocks['Gglimpse'] = {
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -242,7 +242,7 @@ Blockly.Blocks['Ghead'] = {
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -265,7 +265,7 @@ Blockly.Blocks['Gtail'] = {
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -288,7 +288,7 @@ Blockly.Blocks['Ghelp'] = {
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
