@@ -32,6 +32,9 @@ export default function Sidebar() {
                     <iframe id="snippet" width='100%' height='800' src='https://rdrr.io/snippets/embed/?code=library(mosaic)' frameborder='0'>
                         Documentation Support: https://rdrr.io/snippets/embedding/
                     </iframe>
+
+                    {/*<iframe src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1" width="100%" height="500px">
+                    </iframe>*/}
                     
                     
                 </div>
@@ -47,6 +50,8 @@ export default function Sidebar() {
                     </body>
                 </div>
                 */}
+
+                
 
                 
 

@@ -310,6 +310,7 @@ export default function Workspace() {
     }
     workspace.addChangeListener(myUpdateFunction);
     */
+   
 
     // reference: https://developers.google.com/blockly/guides/configure/web/code-generators#realtime_generation
 
