@@ -191,6 +191,18 @@ export default function Workspace() {
                     },
                     {
                         kind: "block",
+                        type: "gf_counts",
+                    },
+                    {
+                        kind: "block",
+                        type: "gf_percents",
+                    },
+                    {
+                        kind: "block",
+                        type: "mosaicplot",
+                    },
+                    {
+                        kind: "block",
                         type: "gf_boxplot",
                     },
                     {
@@ -215,22 +227,8 @@ export default function Workspace() {
                     },
                     {
                         kind: "block",
-                        type: "gf_counts",
-                    },
-                    {
-                        kind: "block",
                         type: "gf_point",
                     },
-                    {
-                        kind: "block",
-                        type: "gf_qq",
-                    },
-                    {
-                        kind: "block",
-                        type: "mosaicplot",
-                    },
-                    
-
                 ],
             },
             {
@@ -245,6 +243,18 @@ export default function Workspace() {
                     {
                         kind: "block",
                         type: "Gpie",
+                    },
+                    {
+                        kind: "block",
+                        type: "Ggf_counts",
+                    },
+                    {
+                        kind: "block",
+                        type: "Ggf_percents",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gmosaicplot",
                     },
                     {
                         kind: "block",
@@ -272,22 +282,78 @@ export default function Workspace() {
                     },
                     {
                         kind: "block",
-                        type: "Ggf_counts",
-                    },
-                    {
-                        kind: "block",
                         type: "Ggf_point",
                     },
+                ],
+            },
+            {
+                kind: "category",
+                name: "Statistical Inference (using HELPrct)",
+                colour: "#039be5",
+                contents: [
                     {
                         kind: "block",
-                        type: "Ggf_qq",
+                        type: "proptest",
                     },
                     {
                         kind: "block",
-                        type: "Gmosaicplot",
+                        type: "proptest2",
                     },
-                    
-
+                    {
+                        kind: "block",
+                        type: "ttest",
+                    },
+                    {
+                        kind: "block",
+                        type: "ttest2",
+                    },
+                    {
+                        kind: "block",
+                        type: "xchisqtest",
+                    },
+                    {
+                        kind: "block",
+                        type: "anova",
+                    },
+                    {
+                        kind: "block",
+                        type: "slrsummary",
+                    },
+                ],
+            },
+            {
+                kind: "category",
+                name: "Statistical Inference",
+                colour: "#039be5",
+                contents: [
+                    {
+                        kind: "block",
+                        type: "Gproptest",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gproptest2",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gttest",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gttest2",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gxchisqtest",
+                    },
+                    {
+                        kind: "block",
+                        type: "Ganova",
+                    },
+                    {
+                        kind: "block",
+                        type: "Gslrsummary",
+                    },
                 ],
             }
         ],

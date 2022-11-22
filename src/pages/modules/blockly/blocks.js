@@ -5,6 +5,8 @@ const BlocklyR = require('./blockly_compressed')
 
 const categorical_vars = [["substance","substance"],["anysub","anysub"], ["sex","sex"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
 const categorical_vars_alt = [["sex","sex"],["substance","substance"],["anysub","anysub"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
+const categorical_vars_alt_anysubfirst = [["anysub","anysub"],["sex","sex"],["substance","substance"],["homeless","homeless"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
+const categorical_vars_alt_homelessfirst = [["homeless","homeless"],["anysub","anysub"],["sex","sex"],["substance","substance"],["link","link"],["racegrp","racegrp"],["satreat","satreat"],["treat","treat"]]
 const quantitative_vars = [["cesd","cesd"],["mcs","mcs"], ["pcs","pcs"],["age","age"],["d1","d1"],["pcs_fr","pcs_fr"],["hospitalizations","hospitalizations"],["sexrisk","sexrisk"],["daysanysub","daysanysub"],["dayslink","dayslink"],["drugrisk","drugrisk"],["e2b","e2b"],["i1","i1"],["i2","i2"],["indtotal","indtotal"]]
 const quantitative_vars_alt = [["mcs","mcs"],["cesd","cesd"], ["pcs","pcs"],["age","age"],["d1","d1"],["pcs_fr","pcs_fr"],["hospitalizations","hospitalizations"],["sexrisk","sexrisk"],["daysanysub","daysanysub"],["dayslink","dayslink"],["drugrisk","drugrisk"],["e2b","e2b"],["i1","i1"],["i2","i2"],["indtotal","indtotal"]]
 
@@ -31,7 +33,7 @@ Blockly.Blocks['lib'] = {
         .appendField(new Blockly.FieldDropdown([["mosaic","mosaic"], ["mosaicData","mosaicData"], ["Stat2Data","Stat2Data"]]), "library_name")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -57,7 +59,7 @@ Blockly.Blocks['names'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to print the names");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -80,7 +82,7 @@ Blockly.Blocks['glimpse'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to take a glimpse of library");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -103,7 +105,7 @@ Blockly.Blocks['head'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to see the header of a data");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -126,7 +128,7 @@ Blockly.Blocks['tail'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to see the tail of the library");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -149,7 +151,7 @@ Blockly.Blocks['help'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to access help from R");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -173,7 +175,7 @@ Blockly.Blocks['Glib'] = {
         .appendField(new Blockly.FieldTextInput(""), "library_name")
         .appendField(")");
     this.setInputsInline(false);
-    this.setPreviousStatement(false, null);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("This is used to load the library");
@@ -199,7 +201,7 @@ Blockly.Blocks['Gnames'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to print the names");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -222,7 +224,7 @@ Blockly.Blocks['Gglimpse'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to take a glimpse of library");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -245,7 +247,7 @@ Blockly.Blocks['Ghead'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to see the header of a data");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -268,7 +270,7 @@ Blockly.Blocks['Gtail'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to see the tail of the library");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -291,7 +293,7 @@ Blockly.Blocks['Ghelp'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
- this.setTooltip("This is used to load the library");
+ this.setTooltip("This is used to access help from R");
  this.setHelpUrl("https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library");
   }
 };
@@ -498,7 +500,7 @@ Blockly.Blocks['favstatssubstancedata'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group");
+   this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group ");
    this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
@@ -527,7 +529,7 @@ Blockly.Blocks['favstatssubstancedata2'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
-   this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group");
+   this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group (same as favstats above)");
    this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
     }
   };
@@ -794,7 +796,7 @@ Blockly.Blocks['Gfavstatssubstancedata2'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
- this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group");
+ this.setTooltip("Choose a quantitative variable, a categorical/grouping variable and a dataset to get the numerical summary for each group (same as favstats above)");
  this.setHelpUrl("https://www.rdocumentation.org/packages/mosaic/versions/0.5-1/topics/favstats");
   }
 };
@@ -850,14 +852,12 @@ Blockly.Blocks['gf_bar'] = {
           .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_1")
           .appendField(", data =")
           .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
-          .appendField(", fill = ~")
-          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("bar chart for one categorical variable");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
     }
   };
@@ -865,8 +865,8 @@ Blockly.Blocks['gf_bar'] = {
   Blockly.JavaScript['gf_bar'] = function(block) {
     var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
     var dropdown_data_name = block.getFieldValue('data');
-    var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
-    var code = 'gf_bar(~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ', fill = ~' + dropdown_categorical_var2_name + ')\n';
+    //var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+    var code = 'gf_bar(~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
@@ -884,7 +884,7 @@ Blockly.Blocks['pie'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("pie chart for one categorical variable");
    this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/pie");
     }
   };
@@ -896,6 +896,104 @@ Blockly.Blocks['pie'] = {
     return code;
   };
 /*******************************************************/
+
+/****************** define gf_counts ******************/
+Blockly.Blocks['gf_counts'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("gf_counts(~")
+        .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
+        .appendField(", fill = ~")
+        .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
+        .appendField(", position = ")
+        .appendField(new Blockly.FieldDropdown([["position_dodge()","position_dodge()"],["\"fill\"","\"fill\""]]), "position")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("side-by-side bar chart for 2 categorical variables");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['gf_counts'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_position_name = block.getFieldValue('position');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'gf_counts(~' + dropdown_categorical_var1_name + ', fill = ~' + dropdown_categorical_var2_name + ', position = ' + dropdown_position_name + ', data = ' + dropdown_data_name + ')\n';
+  return code;
+};
+/*******************************************************/
+
+/* add gf_percents */
+/****************** define gf_percents ******************/
+Blockly.Blocks['gf_percents'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("gf_percents(~")
+        .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
+        .appendField(", fill = ~")
+        .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
+        .appendField(", position = ")
+        .appendField(new Blockly.FieldDropdown([["\"fill\"","\"fill\""],["position_dodge()","position_dodge()"]]), "position")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("segmented bar chart for 2 categorical variables");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['gf_percents'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_position_name = block.getFieldValue('position');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'gf_counts(~' + dropdown_categorical_var1_name + ', fill = ~' + dropdown_categorical_var2_name + ', position = ' + dropdown_position_name + ', data = ' + dropdown_data_name + ')\n';
+  return code;
+};
+/*******************************************************/
+
+/************** define mosaicplot ******************************/
+Blockly.Blocks['mosaicplot'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("mosaicplot(")
+        .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
+        .appendField("~")
+        .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
+        .appendField(", color = ")
+        .appendField(new Blockly.FieldDropdown([["TRUE","TRUE"],["FALSE","FALSE"]]), "boolean")
+        .appendField(", data =")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("mosaic plot for 2 categorical variables");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/mosaicplot");
+  }
+};
+
+Blockly.JavaScript['mosaicplot'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_boolean = block.getFieldValue('boolean');
+  var dropdown_data_name = block.getFieldValue('data');
+  
+  var code = 'mosaicplot(' + dropdown_categorical_var1_name + '~' + dropdown_categorical_var2_name + ', color = ' + dropdown_boolean + ', data = ' + dropdown_data_name + ')\n';
+  return code;
+};
+/*************************************************************************/
 
 /****************** define gf_boxplot ******************/
 Blockly.Blocks['gf_boxplot'] = {
@@ -910,7 +1008,7 @@ Blockly.Blocks['gf_boxplot'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("box plot for one quantitative variable");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_boxplot");
     }
   };
@@ -938,7 +1036,7 @@ Blockly.Blocks['gf_boxplot_substance'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("box plot by groups");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_boxplot");
     }
   };
@@ -961,13 +1059,13 @@ Blockly.Blocks['gf_histogram'] = {
           .appendField(", data = ")
           .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(", bins = ")
-          .appendField(new Blockly.FieldDropdown([["1","1"],["5","5"],["10","10"],["15","15"],["20","20"],["25","25"]]), "bins")
+          .appendField(new Blockly.FieldDropdown([["5","5"],["10","10"],["15","15"],["20","20"]]), "bins")
           .appendField(")");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("histogram for one quantitative variable");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_histogram");
     }
   };
@@ -990,7 +1088,7 @@ Blockly.Blocks['gf_histogram_substance'] = {
           .appendField("|")
           .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable")
           .appendField(", bins =")
-          .appendField(new Blockly.FieldDropdown([["1","1"],["5","5"],["10","10"],["15","15"],["20","20"],["25","25"]]), "bins")
+          .appendField(new Blockly.FieldDropdown([["5","5"],["10","10"],["15","15"],["20","20"]]), "bins")
           .appendField(", data =")
           .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
@@ -998,7 +1096,7 @@ Blockly.Blocks['gf_histogram_substance'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("histogram by groups");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_histogram");
     }
   };
@@ -1026,7 +1124,7 @@ Blockly.Blocks['gf_dens'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("density plot for one quantitative variable");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_density");
     }
   };
@@ -1046,7 +1144,7 @@ Blockly.Blocks['gf_dens_color'] = {
           .appendField("gf_dens(~")
           .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable_1")
           .appendField(", color = ~")
-          .appendField(new Blockly.FieldDropdown(quantitative_vars_alt), "quantitative_variable_2")
+          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable")
           .appendField(", data =")
           .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
@@ -1054,51 +1152,21 @@ Blockly.Blocks['gf_dens_color'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("colored density plot for on quantitative variable");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_density");
     }
   };
 
   Blockly.JavaScript['gf_dens_color'] = function(block) {
     var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
-    var dropdown_quantitative_var2_name = block.getFieldValue('quantitative_variable_2');
-    var dropdown_data_name = block.getFieldValue('data');
-    var code = 'gf_dens(~' + dropdown_quantitative_var1_name + ', color = ~ ' + dropdown_quantitative_var2_name + ', data = ' + dropdown_data_name + ')\n';
-    return code;
-  };
-/*******************************************************/
-
-/****************** define gf_counts ******************/
-Blockly.Blocks['gf_counts'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("gf_counts(~")
-          .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable")
-          .appendField(", fill = ")
-          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable")
-          .appendField(", position = ")
-          .appendField(new Blockly.FieldDropdown([["position_dodge()","position_dodge()"],["\"fill\"","\"fill\""]]), "position")
-          .appendField(", data = ")
-          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
-          .appendField(")");
-      this.setInputsInline(false);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(120);
-   this.setTooltip("");
-   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
-    }
-  };
-
-  Blockly.JavaScript['gf_counts'] = function(block) {
-    var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
     var dropdown_categorical_var_name = block.getFieldValue('categorical_variable');
-    var dropdown_position_name = block.getFieldValue('position');
     var dropdown_data_name = block.getFieldValue('data');
-    var code = 'gf_counts(~' + dropdown_quantitative_var_name + ', fill = ' + dropdown_categorical_var_name + ', position = ' + dropdown_position_name + ', data = ' + dropdown_data_name + ')\n';
+    var code = 'gf_dens(~' + dropdown_quantitative_var1_name + ', color = ~ ' + dropdown_categorical_var_name + ', data = ' + dropdown_data_name + ')\n';
     return code;
   };
 /*******************************************************/
+
+
 
 /************** define gf_point ******************************/
 Blockly.Blocks['gf_point'] = {
@@ -1108,6 +1176,8 @@ Blockly.Blocks['gf_point'] = {
           .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable_1")
           .appendField("~")
           .appendField(new Blockly.FieldDropdown(quantitative_vars_alt), "quantitative_variable_2")
+          .appendField(", color = ~")
+          .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable")
           .appendField(", data =")
           .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
           .appendField(")");
@@ -1115,7 +1185,7 @@ Blockly.Blocks['gf_point'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-   this.setTooltip("");
+   this.setTooltip("overlaid density plots");
    this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_point");
     }
   };
@@ -1123,76 +1193,15 @@ Blockly.Blocks['gf_point'] = {
   Blockly.JavaScript['gf_point'] = function(block) {
     var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
     var dropdown_quantitative_var2_name = block.getFieldValue('quantitative_variable_2');
+    var color = block.getFieldValue('categorical_variable');
     var dropdown_data_name = block.getFieldValue('data');
-    var code = 'gf_point(' + dropdown_quantitative_var1_name + '~' + dropdown_quantitative_var2_name + ', data = ' + dropdown_data_name + ')\n';
+    var code = 'gf_point(' + dropdown_quantitative_var1_name + '~' + dropdown_quantitative_var2_name + ', color = ~' + color + ', data = ' + dropdown_data_name + ')\n';
     return code;
   };
 /*************************************************************************/
 
-/************** define gf_qq ******************************/
-Blockly.Blocks['gf_qq'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("gf_qq(~")
-          .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable")
-          .appendField("|")
-          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_1")
-          .appendField(", data =")
-          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
-          .appendField(", color = ~")
-          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
-          .appendField(")");
-      this.setInputsInline(false);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(120);
-   this.setTooltip("");
-   this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_qq");
-    }
-  };
 
-  Blockly.JavaScript['gf_qq'] = function(block) {
-    var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
-    var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
-    var dropdown_data_name = block.getFieldValue('data');
-    var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
-    var code = 'gf_qq(~' + dropdown_quantitative_var_name + '|' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ', color = ~' + dropdown_categorical_var2_name + ')\n';
-    return code;
-  };
-/*************************************************************************/
 
-/************** define mosaicplot ******************************/
-Blockly.Blocks['mosaicplot'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("mosaicplot(")
-          .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
-          .appendField("~")
-          .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_2")
-          .appendField(", color = ")
-          .appendField(new Blockly.FieldDropdown([["TRUE","TRUE"],["FALSE","FALSE"]]), "boolean")
-          .appendField(", data =")
-          .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
-          .appendField(")");
-      this.setInputsInline(false);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(120);
-   this.setTooltip("");
-   this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/mosaicplot");
-    }
-  };
-
-  Blockly.JavaScript['mosaicplot'] = function(block) {
-    var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
-    var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
-    var dropdown_boolean = block.getFieldValue('boolean');
-    var dropdown_data_name = block.getFieldValue('data');
-    
-    var code = 'mosaicplot(' + dropdown_categorical_var1_name + '~' + dropdown_categorical_var2_name + ', color = ' + dropdown_boolean + ', data = ' + dropdown_data_name + ')\n';
-    return code;
-  };
-/*************************************************************************/
 
 /*************************************************
  *            DATA VISUALIZATION                 *
@@ -1206,14 +1215,12 @@ Blockly.Blocks['Ggf_bar'] = {
         .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
         .appendField(", data =")
         .appendField(new Blockly.FieldTextInput(""), "data")
-        .appendField(", fill = ~")
-        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_2")
         .appendField(")");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("bar chart for one categorical variable");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
   }
 };
@@ -1221,8 +1228,8 @@ Blockly.Blocks['Ggf_bar'] = {
 Blockly.JavaScript['Ggf_bar'] = function(block) {
   var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
   var dropdown_data_name = block.getFieldValue('data');
-  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
-  var code = 'gf_bar(~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ', fill = ~' + dropdown_categorical_var2_name + ')\n';
+  //var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var code = 'gf_bar(~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ')\n';
   return code;
 };
 /*******************************************************/
@@ -1240,7 +1247,7 @@ Blockly.Blocks['Gpie'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("pie chart for one categorical variable");
  this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/pie");
   }
 };
@@ -1252,6 +1259,103 @@ Blockly.JavaScript['Gpie'] = function(block) {
   return code;
 };
 /*******************************************************/
+
+/****************** define gf_counts ******************/
+Blockly.Blocks['Ggf_counts'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("gf_counts(~")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
+        .appendField(", fill = ~")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_2")
+        .appendField(", position = ")
+        .appendField(new Blockly.FieldTextInput(""), "position")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("side-by-side bar chart for two categorical variables");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Ggf_counts'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_position_name = block.getFieldValue('position');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'gf_counts(~' + dropdown_categorical_var1_name + ', fill = ~' + dropdown_categorical_var2_name + ', position = ' + dropdown_position_name + ', data = ' + dropdown_data_name + ')\n';
+  return code;
+};
+/*******************************************************/
+
+/****************** define gf_percents ******************/
+Blockly.Blocks['Ggf_percents'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("gf_percents(~")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
+        .appendField(", fill = ~")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_2")
+        .appendField(", position = ")
+        .appendField(new Blockly.FieldTextInput(""), "position")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("segmented bar chart for two categorical variables");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Ggf_percents'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_position_name = block.getFieldValue('position');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'gf_counts(~' + dropdown_categorical_var1_name + ', fill = ~' + dropdown_categorical_var2_name + ', position = ' + dropdown_position_name + ', data = ' + dropdown_data_name + ')\n';
+  return code;
+};
+/*******************************************************/
+
+/************** define mosaicplot ******************************/
+Blockly.Blocks['Gmosaicplot'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("mosaicplot(")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
+        .appendField("~")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_2")
+        .appendField(", color = ")
+        .appendField(new Blockly.FieldTextInput(""), "boolean")
+        .appendField(", data =")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("mosaic plot for two categorical variables");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/mosaicplot");
+  }
+};
+
+Blockly.JavaScript['Gmosaicplot'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_boolean = block.getFieldValue('boolean');
+  var dropdown_data_name = block.getFieldValue('data');
+  
+  var code = 'mosaicplot(' + dropdown_categorical_var1_name + '~' + dropdown_categorical_var2_name + ', color = ' + dropdown_boolean + ', data = ' + dropdown_data_name + ')\n';
+  return code;
+};
+/*************************************************************************/
 
 /****************** define gf_boxplot ******************/
 Blockly.Blocks['Ggf_boxplot'] = {
@@ -1266,7 +1370,7 @@ Blockly.Blocks['Ggf_boxplot'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("box plot for one quantitative variable");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_boxplot");
   }
 };
@@ -1294,7 +1398,7 @@ Blockly.Blocks['Ggf_boxplot_substance'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("box plot by groups");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_boxplot");
   }
 };
@@ -1323,7 +1427,7 @@ Blockly.Blocks['Ggf_histogram'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("histogram for one quantitative variable");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_histogram");
   }
 };
@@ -1354,7 +1458,7 @@ Blockly.Blocks['Ggf_histogram_substance'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("histogram by groups");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_histogram");
   }
 };
@@ -1382,7 +1486,7 @@ Blockly.Blocks['Ggf_dens'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("density plot for one quantitative variable");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_density");
   }
 };
@@ -1402,7 +1506,7 @@ Blockly.Blocks['Ggf_dens_color'] = {
         .appendField("gf_dens(~")
         .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_1")
         .appendField(", color = ~")
-        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_2")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable")
         .appendField(", data =")
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
@@ -1410,51 +1514,21 @@ Blockly.Blocks['Ggf_dens_color'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("colored density plor for one quantitative variable");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_density");
   }
 };
 
 Blockly.JavaScript['Ggf_dens_color'] = function(block) {
   var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
-  var dropdown_quantitative_var2_name = block.getFieldValue('quantitative_variable_2');
-  var dropdown_data_name = block.getFieldValue('data');
-  var code = 'gf_dens(~' + dropdown_quantitative_var1_name + ', color = ~ ' + dropdown_quantitative_var2_name + ', data = ' + dropdown_data_name + ')\n';
-  return code;
-};
-/*******************************************************/
-
-/****************** define gf_counts ******************/
-Blockly.Blocks['Ggf_counts'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("gf_counts(~")
-        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable")
-        .appendField(", fill = ")
-        .appendField(new Blockly.FieldTextInput(""), "categorical_variable")
-        .appendField(", position = ")
-        .appendField(new Blockly.FieldTextInput(""), "position")
-        .appendField(", data = ")
-        .appendField(new Blockly.FieldTextInput(""), "data")
-        .appendField(")");
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(120);
- this.setTooltip("");
- this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
-  }
-};
-
-Blockly.JavaScript['Ggf_counts'] = function(block) {
-  var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
   var dropdown_categorical_var_name = block.getFieldValue('categorical_variable');
-  var dropdown_position_name = block.getFieldValue('position');
   var dropdown_data_name = block.getFieldValue('data');
-  var code = 'gf_counts(~' + dropdown_quantitative_var_name + ', fill = ' + dropdown_categorical_var_name + ', position = ' + dropdown_position_name + ', data = ' + dropdown_data_name + ')\n';
+  var code = 'gf_dens(~' + dropdown_quantitative_var1_name + ', color = ~ ' + dropdown_categorical_var_name + ', data = ' + dropdown_data_name + ')\n';
   return code;
 };
 /*******************************************************/
+
+
 
 /************** define gf_point ******************************/
 Blockly.Blocks['Ggf_point'] = {
@@ -1464,6 +1538,8 @@ Blockly.Blocks['Ggf_point'] = {
         .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_1")
         .appendField("~")
         .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_2")
+        .appendField(", color = ~")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable")
         .appendField(", data =")
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
@@ -1471,7 +1547,7 @@ Blockly.Blocks['Ggf_point'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
- this.setTooltip("");
+ this.setTooltip("overlaid density plots");
  this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_point");
   }
 };
@@ -1479,74 +1555,466 @@ Blockly.Blocks['Ggf_point'] = {
 Blockly.JavaScript['Ggf_point'] = function(block) {
   var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
   var dropdown_quantitative_var2_name = block.getFieldValue('quantitative_variable_2');
+  var color = block.getFieldValue('categorical_variable');
   var dropdown_data_name = block.getFieldValue('data');
-  var code = 'gf_point(' + dropdown_quantitative_var1_name + '~' + dropdown_quantitative_var2_name + ', data = ' + dropdown_data_name + ')\n';
+  var code = 'gf_point(' + dropdown_quantitative_var1_name + '~' + dropdown_quantitative_var2_name + ', color = ~' + color + ', data = ' + dropdown_data_name + ')\n';
   return code;
 };
 /*************************************************************************/
 
-/************** define gf_qq ******************************/
-Blockly.Blocks['Ggf_qq'] = {
+/*************************************************
+ *  STATISTICAL INFERENCE (using HELPrct)        *
+ ************************************************/
+
+/************** define prop.test ******************************/
+Blockly.Blocks['proptest'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("gf_qq(~")
-        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable")
+        .appendField("prop.test(~")
+        .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_1")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(", alternative = ")
+        .appendField(new Blockly.FieldDropdown([["\"greater\"","\"greater\""],["\"two.sided\"","\"two.sided\""],["\"less\"","\"less\""]]), "alternative")
+        .appendField(", success = ")
+        .appendField(new Blockly.FieldTextInput("\"yes\""), "success")
+        .appendField(", p = ")
+        .appendField(new Blockly.FieldTextInput("0.7"), "p")
+        .appendField(", conf.level = ")
+        .appendField(new Blockly.FieldDropdown([["0.95","0.95"],["0.90","0.90"],["0.99","0.99"],["0.98","0.98"]]), "conf.level")
+        .appendField(", correct = ")
+        .appendField(new Blockly.FieldDropdown([["FALSE","FALSE"],["TRUE","TRUE"]]), "correct")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("one-proportion z-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['proptest'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_alternative_name = block.getFieldValue('alternative');
+  var success_name = block.getFieldValue('success');
+  var p_name = block.getFieldValue('p');
+  var dropdown_conflevel = block.getFieldValue('conf.level');
+  var dropdown_correct_name = block.getFieldValue('correct');
+  var code = 'prop.test(~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ', alternative = ' + dropdown_alternative_name + ', success = ' + success_name + ', p = ' + p_name + ', conf.level = ' + dropdown_conflevel + ', correct = ' + dropdown_correct_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/*********** define prop.test2 ******************************/
+Blockly.Blocks['proptest2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("prop.test(~")
+        .appendField(new Blockly.FieldDropdown(categorical_vars_alt_homelessfirst), "categorical_variable_1")
         .appendField("|")
-        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
-        .appendField(", data =")
-        .appendField(new Blockly.FieldTextInput(""), "data")
-        .appendField(", color = ~")
-        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_2")
+        .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_2")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(", correct = ")
+        .appendField(new Blockly.FieldDropdown([["FALSE","FALSE"],["TRUE","TRUE"]]), "correct")
         .appendField(")");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
- this.setTooltip("");
- this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_qq");
+    this.setColour("#039be5");
+ this.setTooltip("two-proportion z-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
   }
 };
 
-Blockly.JavaScript['Ggf_qq'] = function(block) {
-  var dropdown_quantitative_var_name = block.getFieldValue('quantitative_variable');
+Blockly.JavaScript['proptest2'] = function(block) {
   var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
-  var dropdown_data_name = block.getFieldValue('data');
   var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
-  var code = 'gf_qq(~' + dropdown_quantitative_var_name + '|' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ', color = ~' + dropdown_categorical_var2_name + ')\n';
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_correct_name = block.getFieldValue('correct');
+  var code = 'prop.test(~' + dropdown_categorical_var1_name + '|' + dropdown_categorical_var2_name + ', data = ' + dropdown_data_name + ', correct = ' + dropdown_correct_name + ')\n';
   return code;
 };
-/*************************************************************************/
+/*************************************************************/
 
-/************** define mosaicplot ******************************/
-Blockly.Blocks['Gmosaicplot'] = {
+/************** define t.test ******************************/
+Blockly.Blocks['ttest'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("mosaicplot(")
+        .appendField("t.test(~")
+        .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable_1")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(", alternative = ")
+        .appendField(new Blockly.FieldDropdown([["\"greater\"","\"greater\""],["\"two.sided\"","\"two.sided\""],["\"less\"","\"less\""]]), "alternative")
+        .appendField(", mu = ")
+        .appendField(new Blockly.FieldTextInput("30"), "mu")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("one-sample t-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['ttest'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_alternative_name = block.getFieldValue('alternative');
+  var mu_name = block.getFieldValue('mu');
+  var code = 't.test(~' + dropdown_quantitative_var1_name + ', data = ' + dropdown_data_name + ', alternative = ' + dropdown_alternative_name + ', mu = ' + mu_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define t.test2 ******************************/
+Blockly.Blocks['ttest2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("t.test(")
+        .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_1")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("two-sample t-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['ttest2'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 't.test(' + dropdown_quantitative_var1_name + '~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define xchisq.test ******************************/
+Blockly.Blocks['xchisqtest'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("xchisq.test(")
+        .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldDropdown(categorical_vars_alt), "categorical_variable_2")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField(", correct = ")
+        .appendField(new Blockly.FieldDropdown([["FALSE","FALSE"],["TRUE","TRUE"]]), "correct")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("chi squared test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['xchisqtest'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_correct_name = block.getFieldValue('correct');
+  var code = 'xchisq.test(' + dropdown_categorical_var1_name + '~' + dropdown_categorical_var2_name + ', data = ' + dropdown_data_name + ', correct = ' + dropdown_correct_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define anova ******************************/
+Blockly.Blocks['anova'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("anova(lm(")
+        .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldDropdown(categorical_vars), "categorical_variable_1")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField("))");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("one way anova test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['anova'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'anova(lm(' + dropdown_quantitative_var1_name + '~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + '))\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define summary (SLR) ******************************/
+Blockly.Blocks['slrsummary'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("summary(lm(")
+        .appendField(new Blockly.FieldDropdown(quantitative_vars), "quantitative_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldDropdown(quantitative_vars_alt), "quantitative_variable_2")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldDropdown([["HELPrct","HELPrct"]]), "data")
+        .appendField("))");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("simple linear regression");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['slrsummary'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+  var dropdown_quantitative_var2_name = block.getFieldValue('quantitative_variable_2');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'summary(lm(' + dropdown_quantitative_var1_name + '~' + dropdown_quantitative_var2_name + ', data = ' + dropdown_data_name + '))\n';
+  return code;
+};
+/*************************************************************/
+
+/*************************************************
+ *           STATISTICAL INFERENCE               *
+ ************************************************/
+
+/************** define prop.test ******************************/
+Blockly.Blocks['Gproptest'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("prop.test(~")
         .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
-        .appendField("~")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField(", alternative = ")
+        .appendField(new Blockly.FieldTextInput(""), "alternative")
+        .appendField(", success = ")
+        .appendField(new Blockly.FieldTextInput(""), "success")
+        .appendField(", p = ")
+        .appendField(new Blockly.FieldTextInput(""), "p")
+        .appendField(", conf.level = ")
+        .appendField(new Blockly.FieldTextInput(""), "conf.level")
+        .appendField(", correct = ")
+        .appendField(new Blockly.FieldTextInput(""), "correct")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("one-proportion z-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Gproptest'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_alternative_name = block.getFieldValue('alternative');
+  var success_name = block.getFieldValue('success');
+  var p_name = block.getFieldValue('p');
+  var dropdown_conflevel = block.getFieldValue('conf.level');
+  var dropdown_correct_name = block.getFieldValue('correct');
+  var code = 'prop.test(~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ', alternative = ' + dropdown_alternative_name + ', success = ' + success_name + ', p = ' + p_name + ', conf.level = ' + dropdown_conflevel + ', correct = ' + dropdown_correct_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/*********** define prop.test2 ******************************/
+Blockly.Blocks['Gproptest2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("prop.test(~")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
+        .appendField("|")
         .appendField(new Blockly.FieldTextInput(""), "categorical_variable_2")
-        .appendField(", color = ")
-        .appendField(new Blockly.FieldTextInput(""), "boolean")
-        .appendField(", data =")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField(", correct = ")
+        .appendField(new Blockly.FieldTextInput(""), "correct")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("two-proportion z-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Gproptest2'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_correct_name = block.getFieldValue('correct');
+  var code = 'prop.test(~' + dropdown_categorical_var1_name + '|' + dropdown_categorical_var2_name + ', data = ' + dropdown_data_name + ', correct = ' + dropdown_correct_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define t.test ******************************/
+Blockly.Blocks['Gttest'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("t.test(~")
+        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_1")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField(", alternative = ")
+        .appendField(new Blockly.FieldTextInput(""), "alternative")
+        .appendField(", mu = ")
+        .appendField(new Blockly.FieldTextInput(""), "mu")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("one-sample t-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Gttest'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_alternative_name = block.getFieldValue('alternative');
+  var mu_name = block.getFieldValue('mu');
+  var code = 't.test(~' + dropdown_quantitative_var1_name + ', data = ' + dropdown_data_name + ', alternative = ' + dropdown_alternative_name + ', mu = ' + mu_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define t.test2 ******************************/
+Blockly.Blocks['Gttest2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("t.test(")
+        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
+        .appendField(", data = ")
         .appendField(new Blockly.FieldTextInput(""), "data")
         .appendField(")");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
- this.setTooltip("");
- this.setHelpUrl("https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/mosaicplot");
+    this.setColour("#039be5");
+ this.setTooltip("two-sample t-test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
   }
 };
 
-Blockly.JavaScript['Gmosaicplot'] = function(block) {
+Blockly.JavaScript['Gttest2'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
   var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
-  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
-  var dropdown_boolean = block.getFieldValue('boolean');
   var dropdown_data_name = block.getFieldValue('data');
-  
-  var code = 'mosaicplot(' + dropdown_categorical_var1_name + '~' + dropdown_categorical_var2_name + ', color = ' + dropdown_boolean + ', data = ' + dropdown_data_name + ')\n';
+  var code = 't.test(' + dropdown_quantitative_var1_name + '~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + ')\n';
   return code;
 };
-/*************************************************************************/
+/*************************************************************/
+
+/************** define xchisq.test ******************************/
+Blockly.Blocks['Gxchisqtest'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("xchisq.test(")
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_2")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField(", correct = ")
+        .appendField(new Blockly.FieldTextInput(""), "correct")
+        .appendField(")");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("chi squared test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Gxchisqtest'] = function(block) {
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_categorical_var2_name = block.getFieldValue('categorical_variable_2');
+  var dropdown_data_name = block.getFieldValue('data');
+  var dropdown_correct_name = block.getFieldValue('correct');
+  var code = 'xchisq.test(' + dropdown_categorical_var1_name + '~' + dropdown_categorical_var2_name + ', data = ' + dropdown_data_name + ', correct = ' + dropdown_correct_name + ')\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define anova ******************************/
+Blockly.Blocks['Ganova'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("anova(lm(")
+        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldTextInput(""), "categorical_variable_1")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField("))");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("one way anova test");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Ganova'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+  var dropdown_categorical_var1_name = block.getFieldValue('categorical_variable_1');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'anova(lm(' + dropdown_quantitative_var1_name + '~' + dropdown_categorical_var1_name + ', data = ' + dropdown_data_name + '))\n';
+  return code;
+};
+/*************************************************************/
+
+/************** define summary (SLR) ******************************/
+Blockly.Blocks['Gslrsummary'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("summary(lm(")
+        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_1")
+        .appendField('~')
+        .appendField(new Blockly.FieldTextInput(""), "quantitative_variable_2")
+        .appendField(", data = ")
+        .appendField(new Blockly.FieldTextInput(""), "data")
+        .appendField("))");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#039be5");
+ this.setTooltip("simple linear regression");
+ this.setHelpUrl("https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_bar");
+  }
+};
+
+Blockly.JavaScript['Gslrsummary'] = function(block) {
+  var dropdown_quantitative_var1_name = block.getFieldValue('quantitative_variable_1');
+  var dropdown_quantitative_var2_name = block.getFieldValue('quantitative_variable_2');
+  var dropdown_data_name = block.getFieldValue('data');
+  var code = 'summary(lm(' + dropdown_quantitative_var1_name + '~' + dropdown_quantitative_var2_name + ', data = ' + dropdown_data_name + '))\n';
+  return code;
+};
+/*************************************************************/
 
